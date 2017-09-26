@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MonkeyHubApp.ViewModels
@@ -22,10 +17,12 @@ namespace MonkeyHubApp.ViewModels
             }
             set
             {
-                if(SetProperty(ref _seachTerm, value))
+                if (SetProperty(ref _seachTerm, value))
                     SearchCommand.ChangeCanExecute();
             }
         }
+
+        public ObservableCollection<string> Resultados { get; }
 
         public Command SearchCommand
         {
@@ -35,6 +32,15 @@ namespace MonkeyHubApp.ViewModels
         public MainViewModel()
         {
             SearchCommand = new Command(ExecuteSearchCommand, CanExecuteSearchCommand);
+
+            List<string> X = new List<string>();
+            var listaDeItensNovos = new[] { "Thiago ", "Bucalon" };
+            X.AddRange(listaDeItensNovos);
+
+            // implement AddRange no método de ObservableCollection
+            foreach (var itemNovo in listaDeItensNovos)
+                Resultados.Add(itemNovo);
+
         }
        
         async void ExecuteSearchCommand()
