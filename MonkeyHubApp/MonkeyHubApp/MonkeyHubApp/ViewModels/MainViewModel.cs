@@ -6,8 +6,8 @@ using Xamarin.Forms;
 namespace MonkeyHubApp.ViewModels
 {
     public class MainViewModel : BaseViewModel
-    {
-        private string _seachTerm;
+    {        
+        private string _seachTerm;        
 
         public string SearchTerm
         {
@@ -29,34 +29,47 @@ namespace MonkeyHubApp.ViewModels
             get;
         }
 
+        public Command ClearCommand
+        {
+            get;
+        }
+
+
         public MainViewModel()
         {
             SearchCommand = new Command(ExecuteSearchCommand, CanExecuteSearchCommand);
-
-            List<string> X = new List<string>();
-            var listaDeItensNovos = new[] { "Thiago ", "Bucalon" };
-            X.AddRange(listaDeItensNovos);
-
-            // implement AddRange no método de ObservableCollection
-            foreach (var itemNovo in listaDeItensNovos)
-                Resultados.Add(itemNovo);
-
+            ClearCommand = new Command(ExecuteClearCommand, CanExecuteClearCommand);
+            Resultados = new ObservableCollection<string>();
         }
        
         async void ExecuteSearchCommand()
         {
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
+
             // await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou por '{SearchTerm}'.", "OK");
             bool resposta = await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou po '{SearchTerm}'?", "Sim", "Não");
-            if (resposta)            
+            if (resposta)
                 await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Obrigado", "Ok");
             else
+            {
                 await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Pesquise Novamente!", "OK");
+                Resultados.Add(SearchTerm);         
+            }
         }
 
         bool CanExecuteSearchCommand()
         {          
             return string.IsNullOrWhiteSpace(SearchTerm) == false;
+        }
+
+        void ExecuteClearCommand()
+        {           
+           Resultados.Clear();
+        }
+
+        bool CanExecuteClearCommand()
+        {
+            return true; 
         }
     }
 }
