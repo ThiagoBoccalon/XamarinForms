@@ -4,10 +4,19 @@
              xmlns:local="clr-namespace:MonkeyHubApp"
              x:Class="MonkeyHubApp.MainPage">
 
-	<Label Text="{Binding Descricao}" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" 
-           FontSize="Large"
-           Font="20"/>
+    <StackLayout Spacing="60" Padding="30" VerticalOptions="Center" HorizontalOptions="Fill">
+
+        <Entry Text="{Binding Descricao, Mode=OneWayToSource}"
+               VerticalOptions="Center"
+               HorizontalOptions="Fill"
+               FontSize="Large"/>
+
+        <Label Text="{Binding Descricao}" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" 
+               FontSize="Large"
+               Font="20"/>
+
+    </StackLayout>
 
 </ContentPage>
