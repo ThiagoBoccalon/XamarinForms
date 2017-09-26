@@ -6,16 +6,17 @@
 
     <StackLayout Spacing="60" Padding="30" VerticalOptions="Center" HorizontalOptions="Fill">
 
-        <Entry Text="{Binding Descricao, Mode=OneWayToSource}"
+        <Entry Text="{Binding SearchTerm}"
                VerticalOptions="Center"
                HorizontalOptions="Fill"
                FontSize="Large"/>
 
-        <Label Text="{Binding Descricao}" 
+        <Button Text="Pesquisar" 
                VerticalOptions="Center" 
-               HorizontalOptions="Center" 
+               HorizontalOptions="Fill" 
                FontSize="Large"
-               Font="20"/>
+               Command="{Binding SearchCommand}"
+                />
 
     </StackLayout>
 

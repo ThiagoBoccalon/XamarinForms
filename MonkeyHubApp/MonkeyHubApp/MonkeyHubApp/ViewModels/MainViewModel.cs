@@ -1,40 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MonkeyHubApp.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        private string _descricao;
+        private string _seachTerm;
 
-        public string Descricao
+        public string SearchTerm
         {
             get
             {
-                return _descricao;
+                return _seachTerm;
             }
             set
             {
-                SetProperty(ref _descricao, value);
+                if(SetProperty(ref _seachTerm, value))
+                    SearchCommand.ChangeCanExecute();
             }
         }
-        
+
+        public Command SearchCommand
+        {
+            get;
+        }
+
         public MainViewModel()
         {
-            Descricao = "Olá mundo, feliz 2017!!!";
+            SearchCommand = new Command(ExecuteSearchCommand, CanExecuteSearchCommand);
+        }
+       
+        void ExecuteSearchCommand()
+        {
+            // quando o botão é executado
+        }
 
-            Task.Delay(2000).ContinueWith(async t =>
-            {
-                for (int i = 2018; i <= 2030; i++)
-                {
-                    await Task.Delay(1000);
-                    Descricao = $"Olá mundo, feliz {i}";
-                }
-            });
+        bool CanExecuteSearchCommand()
+        {          
+            return string.IsNullOrWhiteSpace(SearchTerm) == false;
         }
     }
 }
