@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:MonkeyHubApp"
              x:Class="MonkeyHubApp.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
+	<Label Text="{Binding Descricao}" 
            VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+           HorizontalOptions="Center" 
+           FontSize="Large"
+           Font="20"/>
 
 </ContentPage>
