@@ -37,9 +37,15 @@ namespace MonkeyHubApp.ViewModels
             SearchCommand = new Command(ExecuteSearchCommand, CanExecuteSearchCommand);
         }
        
-        void ExecuteSearchCommand()
+        async void ExecuteSearchCommand()
         {
-            // quando o botão é executado
+            await Task.Delay(1000);
+            // await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou por '{SearchTerm}'.", "OK");
+            bool resposta = await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou po '{SearchTerm}'?", "Sim", "Não");
+            if (resposta)            
+                await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Obrigado", "Ok");
+            else
+                await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Pesquise Novamente!", "OK");
         }
 
         bool CanExecuteSearchCommand()
