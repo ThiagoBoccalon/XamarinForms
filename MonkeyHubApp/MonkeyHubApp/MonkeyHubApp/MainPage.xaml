@@ -4,9 +4,13 @@
              xmlns:local="clr-namespace:MonkeyHubApp"
              x:Class="MonkeyHubApp.MainPage"
              Title="Home Page">
-
+   
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="About" Command="{Binding AboutCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <StackLayout Spacing="20" Padding="30" VerticalOptions="Center" HorizontalOptions="Fill">
-               
+        
         <Button Text="Next Page About" Command="{Binding AboutCommand}}"/>
         
         <Entry Text="{Binding SearchTerm}"
@@ -28,9 +32,7 @@
 
         <Label Text="Itens já Pesquisados"
                VerticalOptions="Center"
-               HorizontalOptions="Center"
-               FontSize="Large"
-               FontAttributes="Bold"/>
+               HorizontalOptions="Center"/>
 
         <ListView ItemsSource="{Binding Resultados}"/>
 

@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using MonkeyHubApp.ViewModels;
+using MonkeyHubApp.Services;
 
 
 namespace MonkeyHubApp
