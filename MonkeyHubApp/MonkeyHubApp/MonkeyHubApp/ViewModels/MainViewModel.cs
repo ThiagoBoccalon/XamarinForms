@@ -11,32 +11,33 @@ using MonkeyHubApp.Models;
 namespace MonkeyHubApp.ViewModels
 {
     public class MainViewModel : BaseViewModel
-    {      
-            private const string BaseUrl = "https://monkey-hub-api.azurewebsites.net/api/";
+    {
+        /*
+        private const string BaseUrl = "https://monkey-hub-api.azurewebsites.net/api/";
 
-            public async Task<List<Tag>> GetTagsAsync()
+        public async Task<List<Tag>> GetTagsAsync()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var response = await httpClient.GetAsync($"{BaseUrl}Tags").ConfigureAwait(false);
+
+            if (response.IsSuccessStatusCode)
             {
-                var httpClient = new HttpClient();
-                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var response = await httpClient.GetAsync($"{BaseUrl}Tags").ConfigureAwait(false);
-
-                if (response.IsSuccessStatusCode)
+                using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
                 {
-                    using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
-                    {
-                        return JsonConvert.DeserializeObject<List<Tag>>(
-                            await new StreamReader(responseStream)
-                                .ReadToEndAsync().ConfigureAwait(false));
-                    }
+                    return JsonConvert.DeserializeObject<List<Tag>>(
+                        await new StreamReader(responseStream)
+                            .ReadToEndAsync().ConfigureAwait(false));
                 }
-
-                return null;
             }
 
+            return null;
+        }
 
-       private string _seachTerm;        
-
+    */
+        private string _seachTerm;        
+        
         public string SearchTerm
         {
             get
@@ -50,32 +51,34 @@ namespace MonkeyHubApp.ViewModels
             }
         }
 
-        public ObservableCollection<Tag> Resultados { get; }
+        public ObservableCollection<string> Resultados { get; }
 
         public Command SearchCommand
         {
             get;
-        }      
-
+        } 
+        
+        public Command CleanCommand
+        {
+            get;
+        }        
 
         public MainViewModel()
         {
-            SearchCommand = new Command(ExecuteSearchCommand, CanExecuteSearchCommand);            
-            Resultados = new ObservableCollection<Tag>();
+            SearchCommand = new Command(ExecuteSearchCommand, CanExecuteSearchCommand);
+            CleanCommand = new Command(ExecuteCleanCommand, CanExecuteCleanCommand);
+            Resultados = new ObservableCollection<string>();
         }
        
         async void ExecuteSearchCommand()
-        {
-            //await Task.Delay(1000);
-
-            // await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou por '{SearchTerm}'.", "OK");
+        {           
             bool resposta = await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou po '{SearchTerm}'?", "Sim", "Não");
 
             if (resposta)
             {
                 await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Obrigado", "Ok");
                 
-                var tagsRetornadasDoServico = await GetTagsAsync();
+                /*var tagsRetornadasDoServico = await GetTagsAsync();
                 Resultados.Clear();
 
                 if (tagsRetornadasDoServico != null)
@@ -83,11 +86,12 @@ namespace MonkeyHubApp.ViewModels
                     foreach (var tag in tagsRetornadasDoServico)
                         Resultados.Add(tag);
                 }
+                */
             }
             else
             {
                 await App.Current.MainPage.DisplayAlert("MonkeyHubApp", "Pesquise Novamente!", "OK");
-                Resultados.Clear();
+                Resultados.Add(SearchTerm);
             }
         }
 
@@ -95,5 +99,15 @@ namespace MonkeyHubApp.ViewModels
         {          
             return string.IsNullOrWhiteSpace(SearchTerm) == false;
         }       
+
+        void ExecuteCleanCommand()
+        {           
+            Resultados.Clear();
+        }
+
+        bool CanExecuteCleanCommand()
+        {
+            return true;
+        }
     }
 }
