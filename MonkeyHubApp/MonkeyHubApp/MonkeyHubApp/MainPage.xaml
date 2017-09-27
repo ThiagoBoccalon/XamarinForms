@@ -17,21 +17,16 @@
                FontSize="Large"
                Command="{Binding SearchCommand}"/>
 
-        <Button Text="Apagar Histórico de Pesquisa" 
-               VerticalOptions="Center" 
-               HorizontalOptions="Fill"                
-               Command="{Binding ClearCommand}"/>
-
-
-        <Label Text="Itens já pesquisados:"
-               VerticalOptions="Center"
-               HorizontalOptions="CenterAndExpand"
-               Font="20"
-               FontAttributes="Bold"
-               />
-        
-        <ListView ItemsSource="{Binding Resultados}"/>
-
+        <ListView ItemsSource="{Binding Resultados}">
+            <ListView.ItemTeplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Description}"/>
+                </DataTemplate>
+            </ListView.ItemTeplate>
+            
+        </ListView>
+            
+         
     </StackLayout>
 
 </ContentPage>
