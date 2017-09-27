@@ -5,7 +5,7 @@
              x:Class="MonkeyHubApp.MainPage"
              Title="Home Page">
 
-    <StackLayout Spacing="60" Padding="30" VerticalOptions="Center" HorizontalOptions="Fill">
+    <StackLayout Spacing="20" Padding="30" VerticalOptions="Center" HorizontalOptions="Fill">
 
         <Button Text="Navigação não Modal" Clicked="Button_OnClicked"/>
         <Button Text="Navegação Modal" Clicked="ButtonModal_OnClicked"/>
