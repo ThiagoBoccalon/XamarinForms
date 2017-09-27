@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using MonkeyHubApp.Models;
+using System;
 
 namespace MonkeyHubApp.ViewModels
 {
@@ -56,20 +57,31 @@ namespace MonkeyHubApp.ViewModels
         public Command SearchCommand
         {
             get;
-        } 
+        }        
         
         public Command CleanCommand
         {
             get;
-        }        
+        }
+        
+        public Command AboutCommand
+        {
+            get;
+        }
 
         public MainViewModel()
         {
             SearchCommand = new Command(ExecuteSearchCommand, CanExecuteSearchCommand);
             CleanCommand = new Command(ExecuteCleanCommand, CanExecuteCleanCommand);
+            AboutCommand = new Command(ExecuteAboutCommand);
             Resultados = new ObservableCollection<string>();
         }
-       
+
+        async void ExecuteAboutCommand()
+        {
+            await PushAsync<AboutViewModel>();
+        }
+
         async void ExecuteSearchCommand()
         {           
             bool resposta = await App.Current.MainPage.DisplayAlert("MonkeyHubApp", $"Você pesquisou po '{SearchTerm}'?", "Sim", "Não");

@@ -6,10 +6,9 @@
              Title="Home Page">
 
     <StackLayout Spacing="20" Padding="30" VerticalOptions="Center" HorizontalOptions="Fill">
-
-        <Button Text="Navigação não Modal" Clicked="Button_OnClicked"/>
-        <Button Text="Navegação Modal" Clicked="ButtonModal_OnClicked"/>
-        <Button Text="Volta Modal" Clicked="Button_VoltaModal"/>
+               
+        <Button Text="Next Page About" Command="{Binding AboutCommand}}"/>
+        
         <Entry Text="{Binding SearchTerm}"
                VerticalOptions="Center"
                HorizontalOptions="Fill"
