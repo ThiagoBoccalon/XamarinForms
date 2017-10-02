@@ -4,6 +4,6 @@
              x:Class="MonkeyHubApp.AboutPage"
              Title="About">
     
-    <Label Text="About" HorizontalOptions="Center" VerticalOptions="Center"/>
-
+    <Label x:Name="Welcome" Text="About" HorizontalOptions="Center" VerticalOptions="Center"/>
+    
 </ContentPage>

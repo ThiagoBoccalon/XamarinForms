@@ -15,6 +15,9 @@ namespace MonkeyHubApp
         public AboutPage()
         {
             InitializeComponent();
+            this.Welcome.Text = "Seja bem Vindo!";
+            this.Welcome.TextColor = Color.PaleVioletRed;
+            
         }
     }
 }

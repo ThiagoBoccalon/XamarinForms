@@ -4,49 +4,26 @@
              xmlns:local="clr-namespace:MonkeyHubApp"
              x:Class="MonkeyHubApp.MainPage"
              Title="Home Page">
-   
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="About" Command="{Binding AboutCommand}"/>
-    </ContentPage.ToolbarItems>
+
     
-    <StackLayout Spacing="20" Padding="30" VerticalOptions="Center" HorizontalOptions="Fill">
-        
-        <Button Text="Next Page About" Command="{Binding AboutCommand}}"/>
-        
-        <Entry Text="{Binding SearchTerm}"
-               VerticalOptions="Center"
-               HorizontalOptions="Fill"
-               FontSize="Large"/>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <Button Text="Pesquisar" 
-               VerticalOptions="Center" 
-               HorizontalOptions="Fill" 
-               FontSize="Large"
-               Command="{Binding SearchCommand}"/>
+            
+            <Label Text="L0 C0" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="L0 C1" Grid.Row="0" Grid.Column="1"/>
+            
+            <Label Text="L1 C0" Grid.Row="1" Grid.Column="0"/>
+            <Label Text="L1 C1" Grid.Row="1" Grid.Column="1"/>
 
-        <Button Text="Apagar" 
-                Command="{Binding CleanCommand}"
-                VerticalOptions="Center"
-                HorizontalOptions="Fill"
-                FontSize="Large"/>
-
-        <Label Text="Itens já Pesquisados"
-               VerticalOptions="Center"
-               HorizontalOptions="Center"/>
-
-        <ListView ItemsSource="{Binding Resultados}"/>
-
-
-        <!--
-        <ListView ItemsSource="{Binding Resultados}">
-            <ListView.ItemTeplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Description}"/>
-                </DataTemplate>
-            </ListView.ItemTeplate>        
-        </ListView>
-        -->
-         
+        </Grid>
     </StackLayout>
-
 </ContentPage>
