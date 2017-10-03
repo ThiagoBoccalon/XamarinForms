@@ -4,6 +4,10 @@
              x:Class="MonkeyHubApp.AboutPage"
              Title="About">
     
-    <Label x:Name="Welcome" Text="About" HorizontalOptions="Center" VerticalOptions="Center"/>
-    
+    <StackLayout>
+        <Label Text="About Page" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Salvar" Style="{StaticResource info}"/>
+        <Button Text="Excluir" Style="{StaticResource danger}"/>
+        <Button Text="navegar" Command="{Binding AboutCommand}"/>
+    </StackLayout>
 </ContentPage>
