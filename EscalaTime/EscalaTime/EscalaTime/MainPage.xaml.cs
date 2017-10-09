@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace EscalaTime.Views
+namespace EscalaTime
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
@@ -15,6 +15,11 @@ namespace EscalaTime.Views
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void CircleButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation?.PushAsync(new PlayerPage());
         }
     }
 }

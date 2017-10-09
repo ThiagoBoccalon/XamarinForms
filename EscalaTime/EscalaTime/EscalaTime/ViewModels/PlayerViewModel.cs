@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EscalaTime.ViewModels
 {
-    public class BaseViewModels
+    class PlayerViewModel : BaseViewModel
     {
     }
 }

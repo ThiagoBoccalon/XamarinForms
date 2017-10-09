@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EscalaTime.Views;
+
 
 using Xamarin.Forms;
 
@@ -14,7 +14,7 @@ namespace EscalaTime
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
