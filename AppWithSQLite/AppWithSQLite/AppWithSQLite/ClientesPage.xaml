@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppWithSQLite.ClientesPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="20">
+            
+            <Entry x:Name="NomeCliente" Placeholder="Nome" TextColor="Black"/>
+            <Entry x:Name="EmailCliente" Placeholder="Email" Keyboard="Email" TextColor="Black"/>
+
+            <Button x:Name="buttonSalvar" Text="Salvar" Clicked="SAlvarClicked"/>
+            <ListView x:Name="ListaCliente" BackgroundColor="White"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
