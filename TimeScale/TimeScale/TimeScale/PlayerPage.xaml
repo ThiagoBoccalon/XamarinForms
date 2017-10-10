@@ -4,47 +4,62 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:local="clr-namespace:MyImageButton;assembly=MyImageButton"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
-             x:Class="TimeScale.PlayerPage">
+             x:Class="TimeScale.PlayerPage" BackgroundImage="camp_soccer.png">
     
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Spacing="10" Padding="5">
-            <Entry x:Name="NamePlayer" Placeholder="Nome do Jogador" PlaceholderColor="MediumVioletRed" HorizontalOptions="Center"/>
+        <ScrollView VerticalOptions="Center" HorizontalOptions="Fill">
 
-            <Grid Margin="0,0,0,30" BackgroundColor="LawnGreen" >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
-                    <RowDefinition Height="90"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Spacing="10" Padding="5">
+                <Entry x:Name="NamePlayer" Placeholder="Nome do Jogador" PlaceholderColor="MediumVioletRed" HorizontalOptions="FillAndExpand" Margin="0,30,0,0"/>
 
-                <circularButton:CircleButton Text="Goleiro" FontSize="Large" TextColor="Black" HorizontalOptions="Center"
-                                 BorderRadius="50" HeightRequest="90"
-                                 BorderThickness="5" BorderColor="Black" BackgroundColor="DarkSalmon"                                 
-                                 Clicked="CircleButton_Clicked" VerticalOptions="EndAndExpand"                                         
-                                 Grid.Row="0" Grid.Column="0"
-                                             />
+                <Grid Margin="0,0,0,30">                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>                                       
+                    
+                    <circularButton:CircleButton Text="GOL" Style="{StaticResource circleButton}"
+                                                 BackgroundColor="#e5d416" Grid.Row="0" Grid.Column="1" Command="{Binding }"/>
+
+                    <circularButton:CircleButton Text="LE" Style="{StaticResource circleButton}"                                             
+                                                 BackgroundColor="#42abed" Grid.Row="1" Grid.Column="0"/>
+
+                    <circularButton:CircleButton Text="ZAG" Style="{StaticResource circleButton}"                                             
+                                                 BackgroundColor="#1f0977" Grid.Row="1" Grid.Column="1"/>
+
+                    <circularButton:CircleButton Text="LD" Style="{StaticResource circleButton}" 
+                                                 BackgroundColor="#42abed" Grid.Row="1" Grid.Column="2"/>
+                    
+                    <circularButton:CircleButton Text="VOL" Style="{StaticResource circleButton}" 
+                                                 BackgroundColor="#0f9b53" Grid.Row="2" Grid.Column="0" Margin="0,0,-120,0"/>
+
+                    <circularButton:CircleButton Text="MC" Style="{StaticResource circleButton}" 
+                                                 BackgroundColor="#0f9b53" Grid.Row="2" Grid.Column="2" Margin="-120,0,0,0"/>
+
+                    <circularButton:CircleButton Text="ATA" Style="{StaticResource circleButton}" 
+                                                 BackgroundColor="#c1193a" Grid.Row="3" Grid.Column="1"/>
+                    <!-- Margin="left,up,right, down"-->
 
 
-            </Grid>
+                </Grid>
 
-            <Label Text="Ataque" HorizontalOptions="Center" />
-            <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                <Label Text="Ataque" HorizontalOptions="Center" />
+                <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
 
-            <Label Text="Defesa" HorizontalOptions="Center"/>
-            <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
+                <Label Text="Defesa" HorizontalOptions="Center"/>
+                <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
 
-            <circularButton:CircleButton Text="Save" FontSize="30" TextColor="Black" HorizontalOptions="Center"
-                                 BorderRadius="50" WidthRequest="100" HeightRequest="100"
-                                 BorderThickness="5" BorderColor="Black" BackgroundColor="DarkSalmon"                                 
-                                 Clicked="CircleButton_Clicked" VerticalOptions="EndAndExpand"                                         
-                                 />
-            <!-- Margin="left,up,right, down"-->
+                <Button Text="OK" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="#44703b" Margin="0,0,0,20"/>
+                <!-- Margin="left,up,right, down"-->
 
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

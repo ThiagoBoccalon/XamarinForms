@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using TimeScale.ViewModel;
 
 namespace TimeScale
 {
@@ -12,6 +13,7 @@ namespace TimeScale
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainViewModel();
         }
     }
 }
