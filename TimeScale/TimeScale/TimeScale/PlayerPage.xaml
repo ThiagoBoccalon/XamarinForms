@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:local="clr-namespace:MyImageButton;assembly=MyImageButton"
+             xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
              x:Class="TimeScale.PlayerPage">
+    
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Spacing="10" Padding="5">
-            <Entry x:Name="NamePlayer" Placeholder="Nome do Jogador" PlaceholderColor="MediumVioletRed" HorizontalOptions="CenterAndExpand"/>
+            <Entry x:Name="NamePlayer" Placeholder="Nome do Jogador" PlaceholderColor="MediumVioletRed" HorizontalOptions="Center"/>
 
             <Grid Margin="0,0,0,30" BackgroundColor="LawnGreen" >
                 <Grid.RowDefinitions>
@@ -19,18 +22,14 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <controls:CircleImage Source="goleiro.png" Grid.Row="0" Grid.Column="0" Style="{StaticResource imagemCircleButton}"/>
-                <Label Grid.Row="0" Grid.Column="0" Text="Goleiro" Style="{StaticResource labelPosPlayer}"/>
+                <circularButton:CircleButton Text="Goleiro" FontSize="Large" TextColor="Black" HorizontalOptions="Center"
+                                 BorderRadius="50" HeightRequest="90"
+                                 BorderThickness="5" BorderColor="Black" BackgroundColor="DarkSalmon"                                 
+                                 Clicked="CircleButton_Clicked" VerticalOptions="EndAndExpand"                                         
+                                 Grid.Row="0" Grid.Column="0"
+                                             />
 
-                <controls:CircleImage Source="zagueiro.png" Grid.Row="0" Grid.Column="1" Style="{StaticResource imagemCircleButton}"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="Zagueiro" Style="{StaticResource labelPosPlayer}"/>
 
-                <controls:CircleImage Source="lateral_dir.png" Grid.Row="0" Grid.Column="2" Style="{StaticResource imagemCircleButton}"/>
-                <Label Grid.Row="0" Grid.Column="2" Text="Lateral" Style="{StaticResource labelPosPlayer}"/>
-
-                <controls:CircleImage Source="volante.png" Grid.Row="0" Grid.Column="3" Style="{StaticResource imagemCircleButton}"/>
-                <Label Grid.Row="0" Grid.Column="3" Text="Volante" Style="{StaticResource labelPosPlayer}"/>
-                
             </Grid>
 
             <Label Text="Ataque" HorizontalOptions="Center" />
@@ -39,7 +38,12 @@
             <Label Text="Defesa" HorizontalOptions="Center"/>
             <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
 
-            <Button Text="Save" VerticalOptions="End" HorizontalOptions="Fill" Clicked="Button_Clicked"/>
+            <circularButton:CircleButton Text="Save" FontSize="30" TextColor="Black" HorizontalOptions="Center"
+                                 BorderRadius="50" WidthRequest="100" HeightRequest="100"
+                                 BorderThickness="5" BorderColor="Black" BackgroundColor="DarkSalmon"                                 
+                                 Clicked="CircleButton_Clicked" VerticalOptions="EndAndExpand"                                         
+                                 />
+            <!-- Margin="left,up,right, down"-->
 
         </StackLayout>
     </ContentPage.Content>

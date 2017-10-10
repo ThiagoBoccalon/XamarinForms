@@ -19,7 +19,7 @@ namespace TimeScale
            
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void CircleButton_Clicked(object sender, EventArgs e)
         {
             var player = new Player
             {
