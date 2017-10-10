@@ -4,46 +4,46 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:local="clr-namespace:MyImageButton;assembly=MyImageButton"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
-             x:Class="TimeScale.PlayerPage" BackgroundImage="camp_soccer.png">
+             x:Class="TimeScale.PlayerPage">
     
     <ContentPage.Content>
         <ScrollView VerticalOptions="Center" HorizontalOptions="Fill">
 
             <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Spacing="10" Padding="5">
-                <Entry x:Name="NamePlayer" Placeholder="Nome do Jogador" PlaceholderColor="MediumVioletRed" HorizontalOptions="FillAndExpand" Margin="0,30,0,0"/>
+                <Entry x:Name="NamePlayer" Placeholder="Nome do Jogador" PlaceholderColor="MediumVioletRed" HorizontalOptions="FillAndExpand" Margin="0,10,0,0"/>
 
                 <Grid Margin="0,0,0,30">                    
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
                         <RowDefinition Height="90"/>
                         <RowDefinition Height="90"/>
-                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="90"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>                                       
-                    
-                    <circularButton:CircleButton Text="GOL" Style="{StaticResource circleButton}"
-                                                 BackgroundColor="#e5d416" Grid.Row="0" Grid.Column="1" Command="{Binding }"/>
+                    </Grid.ColumnDefinitions>
 
-                    <circularButton:CircleButton Text="LE" Style="{StaticResource circleButton}"                                             
+                    <circularButton:CircleButton Text="GOL" Style="{StaticResource circleButton}" Command="{Binding GoleiroCommand}"
+                                                 BackgroundColor="#e5d416" Grid.Row="0" Grid.Column="1"/>
+
+                    <circularButton:CircleButton Text="LE" Style="{StaticResource circleButton}" Command="{Binding LateralEsqCommand}"                                              
                                                  BackgroundColor="#42abed" Grid.Row="1" Grid.Column="0"/>
 
-                    <circularButton:CircleButton Text="ZAG" Style="{StaticResource circleButton}"                                             
+                    <circularButton:CircleButton Text="ZAG" Style="{StaticResource circleButton}" Command="{Binding ZagueiroCommand}"                                            
                                                  BackgroundColor="#1f0977" Grid.Row="1" Grid.Column="1"/>
 
-                    <circularButton:CircleButton Text="LD" Style="{StaticResource circleButton}" 
+                    <circularButton:CircleButton Text="LD" Style="{StaticResource circleButton}" Command="{Binding LateralDirCommand}"
                                                  BackgroundColor="#42abed" Grid.Row="1" Grid.Column="2"/>
                     
-                    <circularButton:CircleButton Text="VOL" Style="{StaticResource circleButton}" 
+                    <circularButton:CircleButton Text="VOL" Style="{StaticResource circleButton}" Command="{Binding VolanteCommand}"
                                                  BackgroundColor="#0f9b53" Grid.Row="2" Grid.Column="0" Margin="0,0,-120,0"/>
 
-                    <circularButton:CircleButton Text="MC" Style="{StaticResource circleButton}" 
+                    <circularButton:CircleButton Text="MC" Style="{StaticResource circleButton}" Command="{Binding MeioCommand}"
                                                  BackgroundColor="#0f9b53" Grid.Row="2" Grid.Column="2" Margin="-120,0,0,0"/>
 
-                    <circularButton:CircleButton Text="ATA" Style="{StaticResource circleButton}" 
+                    <circularButton:CircleButton Text="ATA" Style="{StaticResource circleButton}" Command="{Binding AtaqueCommand}"
                                                  BackgroundColor="#c1193a" Grid.Row="3" Grid.Column="1"/>
                     <!-- Margin="left,up,right, down"-->
 
@@ -56,7 +56,8 @@
                 <Label Text="Defesa" HorizontalOptions="Center"/>
                 <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
 
-                <Button Text="OK" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="#44703b" Margin="0,0,0,20"/>
+                <Button Text="OK" VerticalOptions="End" HorizontalOptions="FillAndExpand" 
+                        BackgroundColor="#44703b" Margin="0,0,0,20" Command="{Binding SaveCommand}"/>
                 <!-- Margin="left,up,right, down"-->
 
             </StackLayout>

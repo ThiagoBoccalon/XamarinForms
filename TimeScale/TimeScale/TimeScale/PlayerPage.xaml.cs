@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TimeScale.Model;
+using TimeScale.ViewModel;
 
 namespace TimeScale
 {
@@ -16,7 +17,7 @@ namespace TimeScale
         public PlayerPage()
         {
             InitializeComponent();
-           
+            BindingContext = new PlayerViewModel();
         }
 
         private void CircleButton_Clicked(object sender, EventArgs e)
