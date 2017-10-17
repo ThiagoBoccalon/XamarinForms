@@ -13,7 +13,7 @@ namespace TimeScale
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new PlayerPage());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

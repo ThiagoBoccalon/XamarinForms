@@ -4,8 +4,15 @@
              xmlns:local="clr-namespace:TimeScale"
              x:Class="TimeScale.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <Grid Padding="2" BackgroundColor="#646864">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Text="Novo Jogador" Font="20" BackgroundColor="{StaticResource buttonPlayer_color}" Command="{Binding PlayerCommand}"/>
+        <Button Grid.Column="1" Text="Escala Time" Font="20" BackgroundColor="{StaticResource buttonScale_color}"/>        
+        
+    </Grid>
 
 </ContentPage>

@@ -52,15 +52,15 @@
 
                     </Grid>
                 </StackLayout>
-                <StackLayout BackgroundColor="#585b59" Spacing="30">
-                    <Label Text="Ataque" Style="{StaticResource MyLabel}" Font="16"/>
+                <StackLayout BackgroundColor="#585b59" Spacing="5">
+                    <Label Text="Ataque" Style="{StaticResource MyLabel}" Font="14"/>
                     <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" MinimumHeightRequest="20"/>
 
-                    <Label Text="Defesa" Style="{StaticResource MyLabel}" Font="16"/>
+                    <Label Text="Defesa" Style="{StaticResource MyLabel}" Font="14"/>
                     <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" />
 
-                    <Button Text="Salvar" VerticalOptions="End" HorizontalOptions="FillAndExpand" Font="18" FontSize="Large"
-                        BackgroundColor="#44703b" Margin="0,0,0,20" Command="{Binding SaveCommand}" TextColor="White"/>
+                    <circularButton:CircleButton BorderRadius="10" HeightRequest="50" Text="Salvar" VerticalOptions="End" HorizontalOptions="FillAndExpand" Font="14" FontSize="Large"
+                        BackgroundColor="#a2ed93" Margin="0,0,0,0" Command="{Binding SaveCommand}" TextColor="WhiteSmoke"/>
 
                 </StackLayout>
                 

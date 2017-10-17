@@ -7,11 +7,17 @@
 	<Application.Resources>
 
 		<ResourceDictionary>
+            <!--MainPage Begin-->
+            <Color x:Key="buttonPlayer_color">#19c156</Color>
+            <Color x:Key="buttonScale_color">#396fd3</Color>
+            <!--MainPage End-->
+            <!--PlayerPage Begin-->
             <Color x:Key="label_color">White</Color>
             <Color x:Key="entry_background">#FAFAFA</Color>
             <Color x:Key="entry_border">#C8C8CD</Color>
             <Color x:Key="entry_placeholder_text">#808080</Color>
-
+            <!--PlayerPage End-->
+            
             <Style x:Key="MyEntry" TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="{StaticResource entry_background}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource entry_placeholder_text}" />
@@ -23,19 +29,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="{StaticResource label_color}"/>
             </Style>
-
-            <Style x:Key="imagemCircleButton" TargetType="controls:CircleImage">
-                <Setter Property="HeightRequest" Value="90"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="BorderColor" Value="Black"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="Aspect" Value="AspectFill"/>                
-            </Style>
-            <Style x:Key="labelPosPlayer" TargetType="Label">
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-            </Style>
+            
             <Style x:Key="circleButton" TargetType="circularButton:CircleButton">
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="TextColor" Value="White"/>
