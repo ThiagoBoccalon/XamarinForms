@@ -9,6 +9,12 @@ namespace TimeScale.Model
         [MaxLength(50)]
         public string Name { get; set; }
 
+        public float Offensive { get; set; }
+
+        public float Defensive { get; set; }
+
+
+
         public override string ToString()
         {
             return string.Format("Nome: {0}", Name);

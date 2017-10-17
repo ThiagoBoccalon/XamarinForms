@@ -4,13 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using TimeScale.Model;
 
 namespace TimeScale.ViewModel
 {
     public class PlayerViewModel : BaseViewModel
     {
         private List<string> _position = new List<string>();
+        private string myname;
 
+        public string MyName
+        {
+            get
+            {
+                return myname;
+            }
+            set
+            {
+                if (myname != value)
+                {
+                    myname = value;
+                    OnPropertyChanged("MyName");
+                }
+            }
+        }
         
         public List<string> Position
         {
@@ -25,6 +42,7 @@ namespace TimeScale.ViewModel
             }
         }
 
+      
         public Command PositionCommand
         {
             get;
@@ -126,6 +144,18 @@ namespace TimeScale.ViewModel
 
         async void ExecuteSaveCommand()
         {
+            var player = new Player
+            {
+                Name = myname.ToString(),
+                Offensive = 5,
+                Defensive = 7,
+            };
+
+            using (var data = new AcessDB())
+            {
+                data.InsertPlayer(player);
+            }
+
             // save no BD antes
             _position.Clear();
         }
