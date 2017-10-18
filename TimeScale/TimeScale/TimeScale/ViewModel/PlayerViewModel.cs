@@ -10,7 +10,7 @@ namespace TimeScale.ViewModel
 {
     public class PlayerViewModel : BaseViewModel
     {
-        private List<string> _position = new List<string>();
+        private string _position;                
         private string myname;
 
         public string MyName
@@ -29,7 +29,7 @@ namespace TimeScale.ViewModel
             }
         }
         
-        public List<string> Position
+        public string Position
         {
             get
             {
@@ -109,47 +109,45 @@ namespace TimeScale.ViewModel
 
         async void ExecuteGoleiroCommand()
         {
-            _position.Add("GOL");
+            _position = _position + "GOL";
         }
 
         async void ExecuteLateralEsqCommand()
         {
-            _position.Add("LE");
+            _position = _position + "LE";
         }
 
         async void ExecuteZagueiroCommand()
         {
-            _position.Add("ZAG");
+            _position = _position + "ZAG";
         }
 
         async void ExecuteLateralDirCommand()
         {
-            _position.Add("LD");
+            _position = _position + "LD";
         }
 
         async void ExecuteVolanteCommand()
-        {
-            _position.Add("VOL");
+        {            
+           _position = _position + "VOL";         
         }
 
         async void ExecuteMeioCommand()
         {
-            _position.Add("MC");
+            _position = _position + "MC";
         }
 
         async void ExecuteAtaqueCommand()
         {
-            _position.Add("ATA");
+            _position = _position + "ATA";
         }
 
         async void ExecuteSaveCommand()
         {
-            string p = "GOL";
-            myname = "Bucalon";
             var player = new Player
             {
                 Name = myname.ToString(),
-                Position = p,
+                Position = _position,
                 Offensive = 5,
                 Defensive = 7,
             };

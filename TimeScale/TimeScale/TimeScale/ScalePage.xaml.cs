@@ -16,10 +16,11 @@ namespace TimeScale
 		public ScalePage ()
 		{
 			InitializeComponent();
-
+            string s = "ATA";
             using (var dados = new AcessDB())
             {
-                this.ss.ItemsSource = dados.GetPlayers();
+                Player p = dados.GetDefender(s);
+                //this.ss.ItemsSource = dados.GetDefender();
             }
         }
 
