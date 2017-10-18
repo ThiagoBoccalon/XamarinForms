@@ -7,8 +7,7 @@
     <StackLayout>
         <StackLayout VerticalOptions="EndAndExpand" Padding="20" BackgroundColor="#646864">
             <Button Text="Novo Jogador" Style="{StaticResource ButtonMainPage}" BackgroundColor="{StaticResource buttonPlayer_color}" Command="{Binding PlayerCommand}"/>
-            <Button Text="Escala Time" Style="{StaticResource ButtonMainPage}" BackgroundColor="{StaticResource buttonScale_color}"  Command="{Binding ScaleCommand}"/>
-            <Button Text="Test" Clicked="Button_Clicked"/>
+            <Button Text="Escala Time" Style="{StaticResource ButtonMainPage}" BackgroundColor="{StaticResource buttonScale_color}"  Command="{Binding ScaleCommand}"/>            
         </StackLayout>
     </StackLayout>
 

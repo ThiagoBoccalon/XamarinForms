@@ -4,8 +4,7 @@
              x:Class="TimeScale.ScalePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Time 1" HorizontalOptions="Center"/>
-            <ListView x:Name="ss" />
+            <Label Text="ScaleTime" VerticalOptions="Center" HorizontalOptions="Center"/>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TimeScale.Model;
 
 namespace TimeScale.ViewModel
 {
-    class ScaleViewModel
+    class ScaleViewModel : BaseViewModel
     {
+        Scale scale = new Scale();
 
+        public ScaleViewModel()
+        {
+            scale.ScaleGoal();
+
+        }
     }
 }

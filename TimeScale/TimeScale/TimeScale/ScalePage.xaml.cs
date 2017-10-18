@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TimeScale.Model;
+using TimeScale.ViewModel;
 
 namespace TimeScale
 {
@@ -16,12 +16,7 @@ namespace TimeScale
 		public ScalePage ()
 		{
 			InitializeComponent();
-            string s = "ATA";
-            using (var dados = new AcessDB())
-            {
-                Player p = dados.GetDefender(s);
-                //this.ss.ItemsSource = dados.GetDefender();
-            }
+            BindingContext = new ScaleViewModel();            
         }
 
 

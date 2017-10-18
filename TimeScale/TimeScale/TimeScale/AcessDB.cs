@@ -12,6 +12,7 @@ namespace TimeScale
     public class AcessDB : IDisposable
     {
         private SQLite.Net.SQLiteConnection _conexaoSQLite;
+        List<int> IdSelect = new List<int>();
 
         public AcessDB()
         {
@@ -37,11 +38,18 @@ namespace TimeScale
         }
 
         
-        public Player GetDefender(string position)
+        public Player GetPlayerPosition(string position)
         {
-            
-            return _conexaoSQLite.Table<Player>().FirstOrDefault(c => c.Position.Contains(position));
-            
+            foreach(Player myPlayer in _conexaoSQLite.Table<Player>())
+            {
+                if (myPlayer.Position.Contains(position) && !IdSelect.Contains(myPlayer.Id))
+                {
+                    IdSelect.Add(myPlayer.Id);
+                    return myPlayer;
+                }
+            }
+
+            return null;            
         }
         
         public List<Player> GetPlayers()

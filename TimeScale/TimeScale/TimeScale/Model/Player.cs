@@ -14,8 +14,7 @@ namespace TimeScale.Model
 
         public float Offensive { get; set; }
 
-        public float Defensive { get; set; }
-
+        public float Defensive { get; set; }        
         
 
         public override string ToString()

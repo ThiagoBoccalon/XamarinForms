@@ -43,7 +43,7 @@ namespace TimeScale.ViewModel
 
         async void ExecuteScaleCommand()
         {
-            await PopAsync<MainViewModel>();
+            await PushAsync<ScaleViewModel>();
         }
 
         bool CanExecuteScaleCommand()
