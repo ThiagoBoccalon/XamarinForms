@@ -8,8 +8,9 @@ namespace TimeScale.ViewModel
 
         public ScaleViewModel()
         {
-            scale.ScaleGoal();
-
+            
+            scale.ScaleDefender("GOL",2);
+            scale.ScaleDefender("ZAG", 4);
         }
     }
 }

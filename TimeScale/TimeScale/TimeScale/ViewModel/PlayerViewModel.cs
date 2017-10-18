@@ -144,12 +144,14 @@ namespace TimeScale.ViewModel
 
         async void ExecuteSaveCommand()
         {
+            Random random = new Random();
+
             var player = new Player
             {
                 Name = myname.ToString(),
                 Position = _position,
-                Offensive = 5,
-                Defensive = 7,
+                Offensive = random.Next(1,10),
+                Defensive = random.Next(1,10),
             };
 
             using (var data = new AcessDB())
