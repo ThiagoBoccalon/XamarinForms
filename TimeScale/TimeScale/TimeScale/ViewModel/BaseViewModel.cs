@@ -48,5 +48,10 @@ namespace TimeScale.ViewModel
 
             await Application.Current.MainPage.Navigation.PushAsync(page);
         }
+
+        public async Task PopAsync<TViewModel>(params object[] args) where TViewModel : BaseViewModel
+        {   
+            await Application.Current.MainPage.Navigation.PopAsync();
+        }
     }
 }

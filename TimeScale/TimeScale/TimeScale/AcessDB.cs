@@ -9,7 +9,7 @@ using TimeScale.Model;
 
 namespace TimeScale
 {
-    class AcessDB : IDisposable
+    public class AcessDB : IDisposable
     {
         private SQLite.Net.SQLiteConnection _conexaoSQLite;
 
@@ -36,6 +36,14 @@ namespace TimeScale
             return _conexaoSQLite.Table<Player>().FirstOrDefault(c => c.Id == code);
         }
 
+        
+        public Player GetDefender(string position)
+        {
+            
+            return _conexaoSQLite.Table<Player>().FirstOrDefault(c => c.Position.Contains(position));
+            
+        }
+        
         public List<Player> GetPlayers()
         {
             return _conexaoSQLite.Table<Player>().OrderBy(c => c.Name).ToList();

@@ -4,15 +4,12 @@
              xmlns:local="clr-namespace:TimeScale"
              x:Class="TimeScale.MainPage">
 
-    <Grid Padding="2" BackgroundColor="#646864">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Button Grid.Column="0" Text="Novo Jogador" Font="20" BackgroundColor="{StaticResource buttonPlayer_color}" Command="{Binding PlayerCommand}"/>
-        <Button Grid.Column="1" Text="Escala Time" Font="20" BackgroundColor="{StaticResource buttonScale_color}"/>        
-        
-    </Grid>
+    <StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand" Padding="20" BackgroundColor="#646864">
+            <Button Text="Novo Jogador" Style="{StaticResource ButtonMainPage}" BackgroundColor="{StaticResource buttonPlayer_color}" Command="{Binding PlayerCommand}"/>
+            <Button Text="Escala Time" Style="{StaticResource ButtonMainPage}" BackgroundColor="{StaticResource buttonScale_color}"  Command="{Binding ScaleCommand}"/>
+            <Button Text="Test" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </StackLayout>
 
 </ContentPage>

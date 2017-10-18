@@ -17,6 +17,12 @@
             <Color x:Key="entry_border">#C8C8CD</Color>
             <Color x:Key="entry_placeholder_text">#808080</Color>
             <!--PlayerPage End-->
+
+            <Style x:Key="ButtonMainPage" TargetType="Button">
+                <Setter Property="Font" Value="20"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="20"/>
+            </Style>
             
             <Style x:Key="MyEntry" TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="{StaticResource entry_background}" />

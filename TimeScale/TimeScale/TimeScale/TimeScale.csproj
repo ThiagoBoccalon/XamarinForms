@@ -45,13 +45,18 @@
     </Compile>
     <Compile Include="Model\ImageButton.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Scale.cs" />
     <Compile Include="PlayerPage.xaml.cs">
       <DependentUpon>PlayerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScalePage.xaml.cs">
+      <DependentUpon>ScalePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PlayerViewModel.cs" />
+    <Compile Include="ViewModel\ScaleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -88,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PlayerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ScalePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

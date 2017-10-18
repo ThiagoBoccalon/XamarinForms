@@ -144,9 +144,12 @@ namespace TimeScale.ViewModel
 
         async void ExecuteSaveCommand()
         {
+            string p = "GOL";
+            myname = "Bucalon";
             var player = new Player
             {
                 Name = myname.ToString(),
+                Position = p,
                 Offensive = 5,
                 Defensive = 7,
             };
@@ -155,9 +158,11 @@ namespace TimeScale.ViewModel
             {
                 data.InsertPlayer(player);
             }
-
+            
             // save no BD antes
-            _position.Clear();
+           // _position.Clear();
+          //  MainViewModel._numberPlayer++;
+            await PopAsync<PlayerViewModel>();
         }
 
 
