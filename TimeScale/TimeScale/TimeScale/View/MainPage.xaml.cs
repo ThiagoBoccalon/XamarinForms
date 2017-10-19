@@ -15,11 +15,6 @@ namespace TimeScale
         {
             InitializeComponent();
             BindingContext = new MainViewModel();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation?.PushAsync(new ScalePage());
-        }
+        }       
     }
 }

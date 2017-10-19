@@ -53,17 +53,16 @@
                     </Grid>
                 </StackLayout>
                 <StackLayout BackgroundColor="#585b59" Spacing="5">
-                    <Label Text="Ataque" Style="{StaticResource MyLabel}" Font="14"/>
-                    <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" MinimumHeightRequest="20"/>
+                    <Label Text="{Binding SliderAttack}" Style="{StaticResource MyLabel}" Font="14"/>
+                    <Slider Minimum="0" Maximum="100" Value="{Binding SliderAttack}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" MinimumHeightRequest="20"/>
 
                     <Label Text="Defesa" Style="{StaticResource MyLabel}" Font="14"/>
-                    <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,0,0" />
+                    <Slider VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,0,0"/>
 
                     <circularButton:CircleButton BorderRadius="10" HeightRequest="50" Text="Salvar" VerticalOptions="End" HorizontalOptions="FillAndExpand" Font="14" FontSize="Large"
                         BackgroundColor="#a2ed93" Margin="0,0,0,0" Command="{Binding SaveCommand}" TextColor="WhiteSmoke"/>
 
-                </StackLayout>
-                
+                </StackLayout>               
                 
                 <!-- Margin="left,up,right, down"-->
                 

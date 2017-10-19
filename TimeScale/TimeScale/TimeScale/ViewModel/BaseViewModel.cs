@@ -31,6 +31,14 @@ namespace TimeScale.ViewModel
 
         }
 
+        public void RaisePropertyChanged([CallerMemberName] string propName = "")
+        {
+            if (!string.IsNullOrEmpty(propName))
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
+
         public async Task PushAsync<TViewModel>(params object[] args) where TViewModel : BaseViewModel
         {
             var viewModelType = typeof(TViewModel);
@@ -53,5 +61,7 @@ namespace TimeScale.ViewModel
         {   
             await Application.Current.MainPage.Navigation.PopAsync();
         }
+
+
     }
 }

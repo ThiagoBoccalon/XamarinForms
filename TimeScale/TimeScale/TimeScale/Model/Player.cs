@@ -12,15 +12,16 @@ namespace TimeScale.Model
 
         public string Position { get; set; }
 
-        public float Offensive { get; set; }
+        public decimal Attack { get; set; }
 
-        public float Defensive { get; set; }        
+        public decimal Defender { get; set; }        
         
+        public decimal Score { get; set; }
 
         public override string ToString()
         {
             
-            return string.Format("Nome: {0} \n Position:{1} \n Offensive {2}", Name,Position,Offensive);
+            return string.Format("Nome: {0} \n Position:{1} \n Offensive {2}", Name,Position,Attack);
         }
     }
 }

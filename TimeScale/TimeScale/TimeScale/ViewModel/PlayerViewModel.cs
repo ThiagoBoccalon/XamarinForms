@@ -24,30 +24,27 @@ namespace TimeScale.ViewModel
                 if (myname != value)
                 {
                     myname = value;
-                    OnPropertyChanged("MyName");
+                    OnPropertyChanged(myname);
                 }
             }
         }
-        
-        public string Position
+
+        private decimal _sliderAttack;
+        public decimal SliderAttack
         {
             get
             {
-                return _position;
+                return _sliderAttack;
             }
             set
             {
-                if (SetProperty(ref _position, value))
-                    PositionCommand.ChangeCanExecute();
+                if(_sliderAttack != value)
+                {
+                    _sliderAttack = value;
+                    RaisePropertyChanged();
+                }
             }
         }
-
-      
-        public Command PositionCommand
-        {
-            get;
-        }
-
            
         public Command GoleiroCommand
         {
@@ -89,6 +86,13 @@ namespace TimeScale.ViewModel
             get;
         }
 
+        public Command PositionCommand
+        {
+            get;
+        }
+
+      
+
         public PlayerViewModel()
         {            
             PositionCommand = new Command(ExecutePositionCommand);
@@ -99,7 +103,7 @@ namespace TimeScale.ViewModel
             VolanteCommand = new Command(ExecuteVolanteCommand);
             MeioCommand = new Command(ExecuteMeioCommand);
             AtaqueCommand = new Command(ExecuteAtaqueCommand);
-            SaveCommand = new Command(ExecuteSaveCommand);
+            SaveCommand = new Command(ExecuteSaveCommand);            
         }
 
         async void ExecutePositionCommand()
@@ -150,18 +154,18 @@ namespace TimeScale.ViewModel
             {
                 Name = myname.ToString(),
                 Position = _position,
-                Offensive = random.Next(1,10),
-                Defensive = random.Next(1,10),
+                Attack = random.Next(1,10),
+                Defender = random.Next(1,10),
             };
 
             using (var data = new AcessDB())
             {
                 data.InsertPlayer(player);
             }
-            
+
             // save no BD antes
-           // _position.Clear();
-          //  MainViewModel._numberPlayer++;
+            _position = "";
+          
             await PopAsync<PlayerViewModel>();
         }
 
