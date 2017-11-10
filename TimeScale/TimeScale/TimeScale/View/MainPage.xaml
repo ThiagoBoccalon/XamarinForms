@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TimeScale"
-             x:Class="TimeScale.MainPage">
+             x:Class="TimeScale.MainPage" BackgroundColor="DarkMagenta">
 
     <StackLayout>
         <StackLayout VerticalOptions="EndAndExpand" Padding="20" BackgroundColor="#646864">

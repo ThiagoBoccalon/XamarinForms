@@ -4,7 +4,18 @@
              x:Class="TimeScale.ScalePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="ScaleTime" VerticalOptions="Center" HorizontalOptions="Center"/>            
+            <ListView ItemsSource="" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source=""/>
+                                <TextCell Text="" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

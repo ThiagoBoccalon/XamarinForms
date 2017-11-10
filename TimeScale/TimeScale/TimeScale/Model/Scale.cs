@@ -8,7 +8,7 @@ using TimeScale;
 namespace TimeScale.Model
 {
     public class Scale
-    {
+    {        
         List<Player> player = new List<Player>();
         public static List<Player> time_A = new List<Player>();
         public static List<Player> time_B = new List<Player>();

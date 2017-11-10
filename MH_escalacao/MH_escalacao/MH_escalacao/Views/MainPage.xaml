@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MH_escalacao.Views.MainPage"
+             Title="MainPage" BackgroundColor="Maroon">
+
+    <StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand" Padding="20" BackgroundColor="#646864">
+            <Button Text="Novo Jogador" Style="{StaticResource ButtonMainPage}" Command="{Binding NavigateToPlayerCommand}"/>
+            <Button Text="Escala Time" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
