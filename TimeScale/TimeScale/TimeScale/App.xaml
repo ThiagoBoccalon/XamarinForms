@@ -10,7 +10,7 @@
             <!--MainPage Begin-->
             <Color x:Key="buttonPlayer_color">#19c156</Color>
             <Color x:Key="buttonScale_color">#396fd3</Color>
-            <!--MainPage End-->
+            <!--MainPage  End-->
             <!--PlayerPage Begin-->
             <Color x:Key="label_color">White</Color>
             <Color x:Key="entry_background">#FAFAFA</Color>

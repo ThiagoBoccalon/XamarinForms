@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
+             x:Class="MeuTime.App">
+	<Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonMainPage" TargetType="Button">
+                <Setter Property="Font" Value="20"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style x:Key="MyEntry" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="#FAFAFA" />
+                <Setter Property="PlaceholderColor" Value="#808080" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+            
+            <Style x:Key="circleButton" TargetType="circularButton:CircleButton">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="BorderRadius" Value="50"/>
+                <Setter Property="WidthRequest" Value="80"/>
+                <Setter Property="HeightRequest" Value="80"/>
+                <Setter Property="BorderThickness" Value="40"/>
+                <Setter Property="BorderColor" Value="Black"/>
+            </Style>
+
+            <Style x:Key="MyLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Font" Value="14"/>
+            </Style>
+
+        </ResourceDictionary>
+	</Application.Resources>
+</prism:PrismApplication>

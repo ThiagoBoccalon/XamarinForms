@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MeuTime.Views.PlayerPage" Title="PlayerPage" BackgroundImage="background01.png">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="Center" HorizontalOptions="Fill">
+            <StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Spacing="10" Padding="5">
+                    <Entry Text="{Binding NamePlayer}" Placeholder="Nome do Jogador" Style="{StaticResource MyEntry}"/>
+                    <Grid Margin="0,0,0,30" BackgroundColor="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    
+                        <circularButton:CircleButton Text="GOL" Style="{StaticResource circleButton}"
+                                                     Command="{Binding GoleiroCommand}"
+                                                     Grid.Row="0" Grid.Column="1" 
+                                                     BackgroundColor="#e5d416"/>
+                        
+                        <circularButton:CircleButton Text="ZAG" Style="{StaticResource circleButton}"
+                                                     Command="{Binding ZagueiroCommand}"
+                                                     Grid.Row="1" Grid.Column="1" 
+                                                     BackgroundColor="#1f0977"/>
+                        
+                        <circularButton:CircleButton Text="LE" Style="{StaticResource circleButton}"
+                                                     Command="{Binding LateralEsqCommand}"
+                                                     Grid.Row="1" Grid.Column="0" 
+                                                     BackgroundColor="#42abed"/>
+                        
+                        <circularButton:CircleButton Text="LD" Style="{StaticResource circleButton}"
+                                                     Command="{Binding LateralDirCommand}"
+                                                     Grid.Row="1" Grid.Column="2" 
+                                                     BackgroundColor="#42abed"/>
+                        
+                        <circularButton:CircleButton Text="VOL" Style="{StaticResource circleButton}"
+                                                     Command="{Binding VolanteCommand}"
+                                                     Grid.Row="2" Grid.Column="1" 
+                                                     Margin="0,0,-120,0" BackgroundColor="#0f9b53"/>
+                        
+                        <circularButton:CircleButton Text="MC" Style="{StaticResource circleButton}"
+                                                     Command="{Binding MeioCampoCommand}"
+                                                     Grid.Row="2" Grid.Column="1" 
+                                                     Margin="-120,0,0,0" BackgroundColor="#0f9b53"/>
+                        
+                        <circularButton:CircleButton Text="ATA" Style="{StaticResource circleButton}"
+                                                     Command="{Binding AtaqueCommand}"
+                                                     Grid.Row="3" Grid.Column="1" 
+                                                     BackgroundColor="#c1193a"/>
+                        
+                    </Grid>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Ataque" Style="{StaticResource MyLabel}"/>
+                    
+                    <Label Text="Defesa" Style="{StaticResource MyLabel}"/>
+                    <circularButton:CircleButton BorderRadius="10" HeightRequest="50" 
+                                             Text="Salvar" VerticalOptions="End" 
+                                             HorizontalOptions="FillAndExpand" 
+                                             Font="14" FontSize="Large"
+                                             BackgroundColor="#a2ed93" 
+                                             Margin="0,0,0,0"
+                                             Command="{Binding SavePlayerCommand}"
+                                             TextColor="WhiteSmoke"/>    
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>  
+</ContentPage>
