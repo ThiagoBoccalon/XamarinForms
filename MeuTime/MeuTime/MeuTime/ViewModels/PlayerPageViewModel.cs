@@ -4,6 +4,8 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MeuTime.Models;
+using Xamarin.Forms;
 
 namespace MeuTime.ViewModels
 {
@@ -27,8 +29,8 @@ namespace MeuTime.ViewModels
         public DelegateCommand LateralDirCommand { get; }
         public DelegateCommand VolanteCommand { get; }
         public DelegateCommand MeioCommand { get; }
-        public DelegateCommand AtaqueCommand { get; }
-        public DelegateCommand SavePlayerCommand { get; }
+        public DelegateCommand AtaqueCommand { get; }        
+        public Command SavePlayerCommand { get; }
 
         public PlayerPageViewModel(INavigationService navigationService)
         {
@@ -40,7 +42,7 @@ namespace MeuTime.ViewModels
             VolanteCommand = new DelegateCommand(ExecuteVolanteCommand);
             MeioCommand = new DelegateCommand(ExecuteMeioCommand);
             AtaqueCommand = new DelegateCommand(ExecuteAtaqueCommand);
-            SavePlayerCommand = new DelegateCommand(ExecuteSavePlayerCommand);
+            SavePlayerCommand = new Command(ExecuteSavePlayerCommand);
         }
 
         private void ExecuteGoleiroCommand() { _position += "GOL"; }
@@ -51,9 +53,26 @@ namespace MeuTime.ViewModels
         private void ExecuteMeioCommand() { _position += "MC"; }
         private void ExecuteAtaqueCommand() { _position += "ATA"; }
 
-        private void ExecuteSavePlayerCommand()
+        async void ExecuteSavePlayerCommand()
         {
-            _navigationService.GoBackToRootAsync();
+            NewPlayer();
+            await _navigationService.GoBackToRootAsync();
+        }
+
+        private void NewPlayer()
+        {
+            var player = new Player
+            {
+                Name = _nameplayer.ToString(),
+                Position = _position.ToString(),
+                Attack = 100,
+                Defender = 100
+            };
+
+            using (var data = new AcessDataBase())
+                data.InsertPlayer(player);
+
+            _position = "";
         }
 
     }

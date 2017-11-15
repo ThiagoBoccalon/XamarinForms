@@ -4,6 +4,7 @@ using Android.OS;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
 
+
 namespace MeuTime.Droid
 {
     [Activity(Label = "MeuTime", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

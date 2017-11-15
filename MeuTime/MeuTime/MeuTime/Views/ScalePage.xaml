@@ -8,13 +8,14 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <Label Text="Scale Page Xamarin.Forms!"/>
-            <ListView>
+            <ListView ItemsSource="{Binding TimeOne}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding NamePlayer}"/>
+                                    <Label Text="{Binding Position}"/>
+                                    <Label Text="{Binding Name}"/>                                    
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MeuTime.Models;
 
 namespace MeuTime.ViewModels
 {
@@ -30,7 +31,7 @@ namespace MeuTime.ViewModels
         }
 
         private void NavigateToScalePage()
-        {
+        {              
             _navigationService.NavigateAsync("ScalePage");
         }
 

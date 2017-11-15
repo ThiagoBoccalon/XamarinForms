@@ -11,13 +11,31 @@ namespace MeuTime.ViewModels
 	public class ScalePageViewModel : BindableBase
 	{
         List<Player> player = new List<Player>();
-        public List<Player> TimeOne = new List<Player>();
-        public ObservableCollection<Player> TimeTwo { get; set; }
+        public List<Player> TimeOne { get; set; } = new List<Player>();
+        public List<Player> TimeTwo { get; set; } = new List<Player>();
 
+        Scale scale = new Scale();
 
         public ScalePageViewModel()
         {
-            TimeOne.Add()   
-        }
+            scale.Goleiro("GOL",2);
+
+            for (int i = 0; i < Scale.time_one.Count; i++)
+            {
+                TimeOne.Add(new Player
+                {
+                    Name = Scale.time_one[i].Name,
+                    Position = Scale.time_one[i].Position
+                });
+            }
+            for(int i = 0; i < Scale.time_two.Count; i++)
+            {
+                TimeTwo.Add(new Player
+                {
+                    Name = Scale.time_two[i].Name,
+                    Position = Scale.time_two[i].Position
+                });
+            }
+        }        
 	}
 }
