@@ -66,7 +66,8 @@ namespace MeuTime.ViewModels
                 Name = _nameplayer.ToString(),
                 Position = _position.ToString(),
                 Attack = 100,
-                Defender = 100
+                Defender = 100,
+                Score = 100 + 100
             };
 
             using (var data = new AcessDataBase())

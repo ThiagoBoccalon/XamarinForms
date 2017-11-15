@@ -19,31 +19,113 @@ namespace MeuTime.Models
             
         }
                 
-        public void Goleiro(string _position, int n)
+        public void Goleiro()
         {
-            using(var data = new AcessDataBase())
+            NewPlayers("GOL", "Defesa", 2);
+            for(int i = 0; i < 2; i++)
             {
-                for (int i = 0; i < n; i++)
-                    player.Add(data.GetPlayerPosition(_position));
-                player = player.OrderByDescending(c => c.Defender).ToList();
-
-                for(int i = 0; i < n; i++)
+                if (rd.Next(2) == 0)
                 {
-                    if (rd.Next(2) == 0)
-                    {
-                        _scoreTimeOne += player[i].Defender; time_one.Add(player[i++]);
-                        _scoreTimeTwo += player[i].Defender; time_two.Add(player[i]);
-                    }
-                    else
-                    {
-                        _scoreTimeTwo += player[i].Defender; time_two.Add(player[i++]);
-                        _scoreTimeOne += player[i].Defender; time_two.Add(player[i]);
-                    }
+                     _scoreTimeOne += player[i].Defender; time_one.Add(player[i++]);
+                     _scoreTimeTwo += player[i].Defender; time_two.Add(player[i]);
+                }
+                else
+                {
+                    _scoreTimeTwo += player[i].Defender; time_two.Add(player[i++]);
+                    _scoreTimeOne += player[i].Defender; time_two.Add(player[i]);
                 }
             }
+            
             player.Clear();
         }
 
+        public void ClimbingPlayers(string _position, string _condition, int n)
+        {
+            NewPlayers(_position, _condition, 2);
+            for(int i = 0; i< n; i++)
+            {
+                if(_scoreTimeOne < _scoreTimeTwo)
+                {
+                    switch (_condition)
+                    {
+                        case "Defender":
+                        {
+                                _scoreTimeOne += player[i].Defender; time_one.Add(player[i++]);
+                                _scoreTimeTwo += player[i].Defender; time_two.Add(player[i]);
+                                break;
+                        }
+                        case "Attack":
+                        {
+                                _scoreTimeOne += player[i].Attack; time_one.Add(player[i++]);
+                                _scoreTimeTwo += player[i].Attack; time_two.Add(player[i]);
+                                break;
+                        }
+                        default:
+                        {
+                                _scoreTimeOne += player[i].Defender + player[i].Attack; time_one.Add(player[i++]);
+                                _scoreTimeTwo += player[i].Defender + player[i].Attack; time_two.Add(player[i++]);
+                                break;                          
+                        }
+                    }                    
+                }
+                else
+                {
+                    switch (_condition)
+                    {
+                        case "Defender":
+                        {
+                                _scoreTimeTwo += player[i].Defender; time_two.Add(player[i++]);
+                                _scoreTimeOne += player[i].Defender; time_one.Add(player[i]);
+                                break;
+                        }
+                        case "Attack":
+                        {
+                                _scoreTimeTwo += player[i].Attack; time_two.Add(player[i++]);
+                                _scoreTimeOne += player[i].Attack; time_one.Add(player[i]);
+                                break;
+                        }
+                        default:
+                        {
+                                _scoreTimeTwo += player[i].Defender + player[i].Attack; time_two.Add(player[i++]);
+                                _scoreTimeTwo += player[i].Defender + player[i].Attack; time_two.Add(player[i]);
+                                break;
+                            }
+                    }
+                }
+            }
+        }
+
+        private void NewPlayers(string position, string criterion, int n)
+        {
+            using(var data = new AcessDataBase())
+            {
+                for(int i = 0; i < n; i++)
+                {
+                    player.Add(data.GetPlayerPosition(position));
+                }           
+                switch (criterion)
+                {
+                    case "Defender":
+                        {
+                            player = player.OrderByDescending(c => c.Defender).ToList();
+                            break;
+                        }
+                    case "Attack":
+                        {
+                            player = player.OrderByDescending(c => c.Attack).ToList();
+                            break;
+                        }
+                    default:
+                        {
+                            player = player.OrderByDescending(c => c.Score).ToList();
+                            break;
+                        }
+                }
+                
+            }
+        }
+
+        
          
     }
 }

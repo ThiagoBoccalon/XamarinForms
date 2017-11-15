@@ -18,7 +18,7 @@ namespace MeuTime.ViewModels
 
         public ScalePageViewModel()
         {
-            scale.Goleiro("GOL",2);
+            scale.Goleiro();
 
             for (int i = 0; i < Scale.time_one.Count; i++)
             {
