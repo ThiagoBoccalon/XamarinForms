@@ -15,6 +15,7 @@
                             <ViewCell>
                                 <ViewCell.View>
                                     <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding Image}"/>
                                         <Label Text="{Binding Position}"/>
                                         <Label Text="{Binding Name}"/>
                                     </StackLayout>

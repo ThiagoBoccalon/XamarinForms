@@ -16,7 +16,7 @@ namespace MeuTime.ViewModels
         
 
         Scale scale = new Scale();
-
+                
         public ScalePageViewModel()
         {            
             TimeOne.Clear(); Scale.time_one.Clear();
@@ -35,7 +35,8 @@ namespace MeuTime.ViewModels
                 TimeOne.Add(new Player
                 {                    
                     Name = Scale.time_one[i].Name,
-                    Position = Scale.time_one[i].Position
+                    Position = Scale.time_one[i].Position,
+                    Image = MyImagePlayer(Scale.time_one[i].Position)
                 });
             }
             for(int i = 0; i < Scale.time_two.Count; i++)
@@ -43,9 +44,19 @@ namespace MeuTime.ViewModels
                 TimeTwo.Add(new Player
                 {                    
                     Name = Scale.time_two[i].Name,
-                    Position = Scale.time_two[i].Position
+                    Position = Scale.time_two[i].Position,
+                    Image = MyImagePlayer(Scale.time_two[i].Position)
                 });
             }    
-        }       
-	}
+        }
+
+        public string MyImagePlayer(string _image)
+        {
+            switch (_image)
+            {
+                case "GOL": return "goleiro.png";
+                default: return "volante.png";
+            }
+        }
+    }
 }

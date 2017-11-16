@@ -15,6 +15,8 @@ namespace MeuTime.Models
         [MaxLength(18)]
         public string Position { get; set; }
 
+        public string Image { get; set; }
+
         public decimal Attack { get; set; }
 
         public decimal Defender { get; set; }

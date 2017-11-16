@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MeuTime.Views.MainPage"
-             Title="{Binding Title}" BackgroundColor="CornflowerBlue">
+             Title="{Binding Title}" BackgroundImage="backgroundMainPage.jpg">
 
     <StackLayout VerticalOptions="End">
         <StackLayout BackgroundColor="#585b59" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
