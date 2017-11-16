@@ -6,23 +6,40 @@
              x:Class="MeuTime.Views.ScalePage">
     
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Label Text="Scale Page Xamarin.Forms!"/>
-            <ListView ItemsSource="{Binding TimeOne}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Position}"/>
-                                    <Label Text="{Binding Name}"/>                                    
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>            
+        <ScrollView>
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Time de Amarelo:" Font="20"/>
+                <ListView ItemsSource="{Binding TimeOne}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Position}"/>
+                                        <Label Text="{Binding Name}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Time de Laranja" Font="20"/>
+                <ListView ItemsSource="{Binding TimeTwo}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Position}"/>
+                                        <Label Text="{Binding Name}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
     
 </ContentPage>

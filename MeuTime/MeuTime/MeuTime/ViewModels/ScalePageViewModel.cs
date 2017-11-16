@@ -13,17 +13,27 @@ namespace MeuTime.ViewModels
         List<Player> player = new List<Player>();
         public List<Player> TimeOne { get; set; } = new List<Player>();
         public List<Player> TimeTwo { get; set; } = new List<Player>();
+        
 
         Scale scale = new Scale();
 
         public ScalePageViewModel()
-        {
-            scale.Goleiro();
+        {            
+            TimeOne.Clear(); Scale.time_one.Clear();
+            TimeTwo.Clear(); Scale.time_two.Clear();
 
+            scale.Goalkeeper();                        
+            scale.OthersPlayers("ZAG","Defender",4);            
+            scale.OthersPlayers("LE", "DefenderAttack", 2);
+            scale.OthersPlayers("LD", "DefenderAttack", 2);
+            scale.OthersPlayers("VOL", "Defender", 2);
+            scale.OthersPlayers("MC", "Attack", 2);
+            scale.OthersPlayers("ATA", "Attack", 2);
+            
             for (int i = 0; i < Scale.time_one.Count; i++)
             {
                 TimeOne.Add(new Player
-                {
+                {                    
                     Name = Scale.time_one[i].Name,
                     Position = Scale.time_one[i].Position
                 });
@@ -31,11 +41,11 @@ namespace MeuTime.ViewModels
             for(int i = 0; i < Scale.time_two.Count; i++)
             {
                 TimeTwo.Add(new Player
-                {
+                {                    
                     Name = Scale.time_two[i].Name,
                     Position = Scale.time_two[i].Position
                 });
-            }
-        }        
+            }    
+        }       
 	}
 }

@@ -11,6 +11,9 @@ namespace MeuTime.ViewModels
 {
 	public class PlayerPageViewModel : BindableBase
 	{
+        public static int gol_number, zag_number, ld_number, le_number,
+                            vol_number, mc_number, ata_number;
+
         private INavigationService _navigationService;
         public DelegateCommand NavigateToMainPageCommand { get; private set; }
 
@@ -21,6 +24,20 @@ namespace MeuTime.ViewModels
         {
             get { return _nameplayer;  }
             set { _nameplayer = value; }
+        }
+
+        private decimal _sliderAttack, _sliderDefender;
+
+        public decimal SliderAttack
+        {
+            get { return _sliderAttack; }
+            set { if (_sliderAttack != value) _sliderAttack = value; RaisePropertyChanged(); }
+        }
+
+        public decimal SliderDefender
+        {
+            get { return _sliderDefender; }
+            set { if (_sliderDefender != value) _sliderDefender = value; RaisePropertyChanged(); }
         }
 
         public DelegateCommand GoleiroCommand { get; }
@@ -65,9 +82,9 @@ namespace MeuTime.ViewModels
             {
                 Name = _nameplayer.ToString(),
                 Position = _position.ToString(),
-                Attack = 100,
-                Defender = 100,
-                Score = 100 + 100
+                Attack = _sliderAttack,
+                Defender = _sliderDefender,
+                Score = _sliderAttack + _sliderDefender
             };
 
             using (var data = new AcessDataBase())

@@ -19,9 +19,9 @@ namespace MeuTime.Models
             
         }
                 
-        public void Goleiro()
+        public void Goalkeeper()
         {
-            NewPlayers("GOL", "Defesa", 2);
+            NewPlayers("GOL", "Defender", 2);
             for(int i = 0; i < 2; i++)
             {
                 if (rd.Next(2) == 0)
@@ -32,16 +32,15 @@ namespace MeuTime.Models
                 else
                 {
                     _scoreTimeTwo += player[i].Defender; time_two.Add(player[i++]);
-                    _scoreTimeOne += player[i].Defender; time_two.Add(player[i]);
+                    _scoreTimeOne += player[i].Defender; time_one.Add(player[i]);
                 }
-            }
-            
+            }            
             player.Clear();
         }
 
-        public void ClimbingPlayers(string _position, string _condition, int n)
+        public void OthersPlayers(string _position, string _condition, int n)
         {
-            NewPlayers(_position, _condition, 2);
+            NewPlayers(_position, _condition, n);
             for(int i = 0; i< n; i++)
             {
                 if(_scoreTimeOne < _scoreTimeTwo)
@@ -87,12 +86,13 @@ namespace MeuTime.Models
                         default:
                         {
                                 _scoreTimeTwo += player[i].Defender + player[i].Attack; time_two.Add(player[i++]);
-                                _scoreTimeTwo += player[i].Defender + player[i].Attack; time_two.Add(player[i]);
+                                _scoreTimeTwo += player[i].Defender + player[i].Attack; time_one.Add(player[i]);
                                 break;
                             }
                     }
                 }
             }
+            player.Clear();
         }
 
         private void NewPlayers(string position, string criterion, int n)
@@ -120,8 +120,7 @@ namespace MeuTime.Models
                             player = player.OrderByDescending(c => c.Score).ToList();
                             break;
                         }
-                }
-                
+                }                
             }
         }
 

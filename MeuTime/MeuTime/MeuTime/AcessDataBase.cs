@@ -62,5 +62,10 @@ namespace MeuTime
         {
             _conexaoSQLite.Dispose();
         }
+
+        public void DropTable()
+        {
+            _conexaoSQLite.DropTable<Player>();
+        }
     }
 }

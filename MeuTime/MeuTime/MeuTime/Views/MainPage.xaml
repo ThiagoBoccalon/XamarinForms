@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MeuTime.Views.MainPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}" BackgroundColor="CornflowerBlue">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-        <Button Text="Novo Jogador" Command="{Binding NavigateToPlayerPageCommand}" />
-        <Button Text="Escalacao" Command="{Binding NavigateToScalePageCommand}"/>
+    <StackLayout VerticalOptions="End">
+        <StackLayout BackgroundColor="#585b59" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+            <Button Text="Novo Jogador" Command="{Binding NavigateToPlayerPageCommand}" HeightRequest="70"/>
+            <Button Text="Escalacao" Command="{Binding NavigateToScalePageCommand}" HeightRequest="70"/>
+            <Button Text="Novo Jogo" Command="{Binding ResetCommand}" HeightRequest="70"/>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

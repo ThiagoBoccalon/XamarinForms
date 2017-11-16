@@ -4,7 +4,7 @@
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="MeuTime.Views.PlayerPage" Title="PlayerPage" BackgroundImage="background01.png">
+             x:Class="MeuTime.Views.PlayerPage" Title="PlayerPage" BackgroundImage="backgound01.png">
     <ContentPage.Content>
         <ScrollView VerticalOptions="Center" HorizontalOptions="Fill">
             <StackLayout>
@@ -49,7 +49,7 @@
                                                      Margin="0,0,-120,0" BackgroundColor="#0f9b53"/>
                         
                         <circularButton:CircleButton Text="MC" Style="{StaticResource circleButton}"
-                                                     Command="{Binding MeioCampoCommand}"
+                                                     Command="{Binding MeioCommand}"
                                                      Grid.Row="2" Grid.Column="1" 
                                                      Margin="-120,0,0,0" BackgroundColor="#0f9b53"/>
                         
@@ -60,10 +60,17 @@
                         
                     </Grid>
                 </StackLayout>
-                <StackLayout>
-                    <Label Text="Ataque" Style="{StaticResource MyLabel}"/>
-                    
-                    <Label Text="Defesa" Style="{StaticResource MyLabel}"/>
+                <StackLayout BackgroundColor="#585b59" Spacing="5">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Ataque: " Style="{StaticResource MyLabel}"/>
+                        <Label Text="{Binding SliderAttack}" Style="{StaticResource MyLabel}"/>
+                    </StackLayout>                    
+                    <Slider Value="{Binding SliderAttack}" Style="{StaticResource MySlider}"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Defesa: " Style="{StaticResource MyLabel}"/>
+                        <Label Text="{Binding SliderDefender}" Style="{StaticResource MyLabel}"/>                        
+                    </StackLayout>                    
+                    <Slider Value="{Binding SliderDefender}" Style="{StaticResource MySlider}"/>
                     <circularButton:CircleButton BorderRadius="10" HeightRequest="50" 
                                              Text="Salvar" VerticalOptions="End" 
                                              HorizontalOptions="FillAndExpand" 

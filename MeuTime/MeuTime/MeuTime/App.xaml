@@ -34,7 +34,15 @@
             <Style x:Key="MyLabel" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="White"/>
-                <Setter Property="Font" Value="14"/>
+                <Setter Property="Font" Value="16"/>
+            </Style>
+
+            <Style x:Key="MySlider" TargetType="Slider">
+                <Setter Property="Minimum" Value="0"/>
+                <Setter Property="Maximum" Value="100"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="MinimumHeightRequest" Value="20"/>
             </Style>
 
         </ResourceDictionary>
