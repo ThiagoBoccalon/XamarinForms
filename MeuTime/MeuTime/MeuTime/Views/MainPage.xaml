@@ -2,13 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MeuTime.Views.MainPage"
+             xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
              Title="{Binding Title}" BackgroundImage="backgroundMainPage.jpg">
 
     <StackLayout VerticalOptions="End">
-        <StackLayout BackgroundColor="#585b59" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
-            <Button Text="Novo Jogador" Command="{Binding NavigateToPlayerPageCommand}" HeightRequest="70"/>
-            <Button Text="Escalacao" Command="{Binding NavigateToScalePageCommand}" HeightRequest="70"/>
-            <Button Text="Novo Jogo" Command="{Binding ResetCommand}" HeightRequest="70"/>
+        <StackLayout BackgroundColor="#585b59"
+                     VerticalOptions="End"  
+                     HorizontalOptions="FillAndExpand" HeightRequest="180">            
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <circularButton:CircleButton Text="jogador" Style="{StaticResource circleButton_Main}" Grid.Column="0"                                             
+                                         BackgroundColor="#e5d416" VerticalOptions="Center"/>
+                <circularButton:CircleButton Text="Escalação" Style="{StaticResource circleButton_Main}" Grid.Column="1"
+                                         BackgroundColor="#e5d416"/>
+                <circularButton:CircleButton Text="Partida" Style="{StaticResource circleButton_Main}" Grid.Column="2"
+                                         BackgroundColor="#e5d416"/>
+            </Grid>                        
         </StackLayout>
     </StackLayout>
 

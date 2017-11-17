@@ -55,7 +55,12 @@ namespace MeuTime.ViewModels
             switch (_image)
             {
                 case "GOL": return "goleiro.png";
-                default: return "volante.png";
+                case "ZAG": return "zagueiro.png";
+                case "LE": return "lateral_dir.png";
+                case "LD": return "lateral_dir.png";
+                case "VOL": return "volante.png";
+                case "MC": return "meia_criador.png";                
+                default: return "atacante.png";
             }
         }
     }

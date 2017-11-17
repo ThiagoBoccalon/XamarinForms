@@ -3,13 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="MeuTime.App">
+    
 	<Application.Resources>
         <ResourceDictionary>
+            <!-- Main Page-->
             <Style x:Key="ButtonMainPage" TargetType="Button">
                 <Setter Property="Font" Value="20"/>
                 <Setter Property="TextColor" Value="White"/>
             </Style>
+
+            <Style x:Key="circleButton_Main" TargetType="circularButton:CircleButton">
+                <Setter Property="Font" Value="12"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="BorderRadius" Value="80"/>
+                <Setter Property="WidthRequest" Value="110"/>
+                <Setter Property="HeightRequest" Value="110"/>
+                <Setter Property="BorderThickness" Value="5"/>
+                <Setter Property="BorderColor" Value="Black"/>                
+            </Style>
+            
+            <!-- Player Page -->
             <Style x:Key="MyEntry" TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="#FAFAFA" />
                 <Setter Property="PlaceholderColor" Value="#808080" />
@@ -27,7 +46,7 @@
                 <Setter Property="BorderRadius" Value="50"/>
                 <Setter Property="WidthRequest" Value="80"/>
                 <Setter Property="HeightRequest" Value="80"/>
-                <Setter Property="BorderThickness" Value="40"/>
+                <Setter Property="BorderThickness" Value="2"/>
                 <Setter Property="BorderColor" Value="Black"/>
             </Style>
 
@@ -43,6 +62,18 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="MinimumHeightRequest" Value="20"/>
+            </Style>
+            
+            <!-- Scale Page-->
+            <Style x:Key="ImagePlayer" TargetType="controls:CircleImage">
+                <Setter Property="Aspect" Value="Fill"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="40"/>                
+            </Style>
+
+            <Style x:Key="LabelPlayer" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Font" Value="18"/>
             </Style>
 
         </ResourceDictionary>
