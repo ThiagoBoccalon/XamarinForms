@@ -32,6 +32,7 @@ namespace MeuTime
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<PlayerPage>();
             Container.RegisterTypeForNavigation<ScalePage>();
+            Container.RegisterTypeForNavigation<SettingsPage>();
         }
     }
 }

@@ -15,15 +15,15 @@
             </Style>
 
             <Style x:Key="circleButton_Main" TargetType="circularButton:CircleButton">
-                <Setter Property="Font" Value="12"/>
+                <Setter Property="Font" Value="70"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontFamily" Value="Arial"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="BorderRadius" Value="80"/>
-                <Setter Property="WidthRequest" Value="110"/>
-                <Setter Property="HeightRequest" Value="110"/>
+                <Setter Property="WidthRequest" Value="105"/>
+                <Setter Property="HeightRequest" Value="105"/>
                 <Setter Property="BorderThickness" Value="5"/>
                 <Setter Property="BorderColor" Value="Black"/>                
             </Style>
@@ -33,7 +33,7 @@
                 <Setter Property="BackgroundColor" Value="#FAFAFA" />
                 <Setter Property="PlaceholderColor" Value="#808080" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontSize" Value="20"/>
             </Style>
             
             <Style x:Key="circleButton" TargetType="circularButton:CircleButton">
@@ -67,8 +67,10 @@
             <!-- Scale Page-->
             <Style x:Key="ImagePlayer" TargetType="controls:CircleImage">
                 <Setter Property="Aspect" Value="Fill"/>
-                <Setter Property="HeightRequest" Value="40"/>
-                <Setter Property="WidthRequest" Value="40"/>                
+                <Setter Property="HeightRequest" Value="80"/>
+                <Setter Property="WidthRequest" Value="80"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1"/>
             </Style>
 
             <Style x:Key="LabelPlayer" TargetType="Label">

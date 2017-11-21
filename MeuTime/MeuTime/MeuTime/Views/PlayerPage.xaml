@@ -9,7 +9,7 @@
         <ScrollView VerticalOptions="Center" HorizontalOptions="Fill">
             <StackLayout>
                 <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Spacing="10" Padding="5">
-                    <Entry Text="{Binding NamePlayer}" Placeholder="Nome do Jogador" Style="{StaticResource MyEntry}"/>
+                    <Entry Text="{Binding NamePlayer}" Placeholder="Nome do Jogador" Style="{StaticResource MyEntry}" />
                     <Grid Margin="0,0,0,30" BackgroundColor="Transparent">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="90"/>
@@ -71,14 +71,19 @@
                         <Label Text="{Binding SliderDefender}" Style="{StaticResource MyLabel}"/>                        
                     </StackLayout>                    
                     <Slider Value="{Binding SliderDefender}" Style="{StaticResource MySlider}"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Velocidade:" Style="{StaticResource MyLabel}"/>
+                        <Label Style="{StaticResource MyLabel}"/>
+                    </StackLayout>
+                    <Slider Style="{StaticResource MySlider}"/>
                     <circularButton:CircleButton BorderRadius="10" HeightRequest="50" 
                                              Text="Salvar" VerticalOptions="End" 
                                              HorizontalOptions="FillAndExpand" 
                                              Font="14" FontSize="Large"
                                              BackgroundColor="#a2ed93" 
-                                             Margin="0,0,0,0"
+                                             Margin="0,0,0,0" 
                                              Command="{Binding SavePlayerCommand}"
-                                             TextColor="WhiteSmoke"/>    
+                                             TextColor="Black"/>    
                 </StackLayout>
             </StackLayout>
         </ScrollView>

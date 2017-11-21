@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MeuTime.ViewModels;
 
 namespace MeuTime.Models
 {    
@@ -40,6 +41,7 @@ namespace MeuTime.Models
 
         public void OthersPlayers(string _position, string _condition, int n)
         {
+          //  int n = GetNumbemPosition(_position);
             NewPlayers(_position, _condition, n);
             for(int i = 0; i< n; i++)
             {
@@ -124,7 +126,9 @@ namespace MeuTime.Models
             }
         }
 
-        
-         
+       
+
+
+
     }
 }

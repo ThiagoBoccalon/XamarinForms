@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Plugins.Forms.ButtonCircle" Version="1.2.47" />
     <PackageReference Include="SQLite.Net-PCL" Version="3.1.1" />
-    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="1.8.1" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="2.0.0.31-beta" />
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.282" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.0.0.168-pre" />
   </ItemGroup>

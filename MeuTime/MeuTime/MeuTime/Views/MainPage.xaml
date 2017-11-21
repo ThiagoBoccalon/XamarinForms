@@ -3,25 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MeuTime.Views.MainPage"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
-             Title="{Binding Title}" BackgroundImage="backgroundMainPage.jpg">
+             Title="{Binding Title}" BackgroundImage="background_main.png">
 
     <StackLayout VerticalOptions="End">
-        <StackLayout BackgroundColor="#585b59"
+        <StackLayout BackgroundColor="#35393a"
                      VerticalOptions="End"  
-                     HorizontalOptions="FillAndExpand" HeightRequest="180">            
-            <Grid VerticalOptions="CenterAndExpand">
+                     HorizontalOptions="FillAndExpand" HeightRequest="160">            
+            <Grid VerticalOptions="CenterAndExpand" Padding="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <circularButton:CircleButton Text="jogador" Style="{StaticResource circleButton_Main}" Grid.Column="0"                                             
-                                         BackgroundColor="#e5d416" VerticalOptions="Center"/>
-                <circularButton:CircleButton Text="Escalação" Style="{StaticResource circleButton_Main}" Grid.Column="1"
-                                         BackgroundColor="#e5d416"/>
-                <circularButton:CircleButton Text="Partida" Style="{StaticResource circleButton_Main}" Grid.Column="2"
-                                         BackgroundColor="#e5d416"/>
+                <circularButton:CircleButton Icon="ic_add" Style="{StaticResource circleButton_Main}" Grid.Column="0"                                           
+                                         BackgroundColor="#239ebc" Command="{Binding NavigateToPlayerPageCommand}"/>
+
+                <circularButton:CircleButton Icon="ic_directions_run" Style="{StaticResource circleButton_Main}" Grid.Column="1"
+                                         BackgroundColor="#16e59c" Command="{Binding NavigateToScalePageCommand}"/>
+
+                <circularButton:CircleButton Icon="ic_settings" Style="{StaticResource circleButton_Main}" Grid.Column="2"
+                                         BackgroundColor="#c96d46" Command="{Binding NavigateToSettingsPageCommand}"/>
             </Grid>                        
         </StackLayout>
     </StackLayout>

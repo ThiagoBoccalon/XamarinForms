@@ -98,7 +98,7 @@
       <Version>3.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
-      <Version>1.8.1</Version>
+      <Version>2.0.0.31-beta</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -141,7 +141,10 @@
     <AndroidResource Include="Resources\drawable\zagueiro.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\backgroundMainPage.jpg" />
+    <AndroidResource Include="Resources\drawable\background_mainpage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\background_main.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

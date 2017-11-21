@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MeuTime.Models;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace MeuTime.ViewModels
 {
@@ -26,7 +27,7 @@ namespace MeuTime.ViewModels
             scale.OthersPlayers("ZAG","Defender",4);            
             scale.OthersPlayers("LE", "DefenderAttack", 2);
             scale.OthersPlayers("LD", "DefenderAttack", 2);
-            scale.OthersPlayers("VOL", "Defender", 2);
+            scale.OthersPlayers("VOL", "DefenderAttack", 2);
             scale.OthersPlayers("MC", "Attack", 2);
             scale.OthersPlayers("ATA", "Attack", 2);
             

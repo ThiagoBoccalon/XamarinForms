@@ -7,34 +7,38 @@
              x:Class="MeuTime.Views.ScalePage">
     
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView Padding="10,20">
             <StackLayout VerticalOptions="Start">
-                <Label Text="Time de Amarelo:" Font="20"/>
-                <ListView ItemsSource="{Binding TimeOne}">
+                <Label Text="Time 1:" Font="30" HorizontalOptions="CenterAndExpand"/>
+                <ListView ItemsSource="{Binding TimeOne}" SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell Height="80">
                                 <ViewCell.View>
-                                    <StackLayout Orientation="Horizontal">
-                                        <controls:CircleImage Source="{Binding Image}" Style="{StaticResource ImagePlayer}"/>
-                                        <Label Text="{Binding Position}" Style="{StaticResource LabelPlayer}"/>
-                                        <Label Text="{Binding Name}" Style="{StaticResource LabelPlayer}"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                        <!--
+                                        <controls:CircleImage Source="{Binding Image}" Style="{StaticResource ImagePlayer}" />                                        
+                                        -->
+                                        <Label Text="{Binding Position}" Style="{StaticResource LabelPlayer}" />
+                                        <Label Text="{Binding Name}" Style="{StaticResource LabelPlayer}" />
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Label Text="Time de Laranja" Font="20"/>
+                <Label Text="Time 2:" Font="30" HorizontalOptions="CenterAndExpand" />
                 <ListView ItemsSource="{Binding TimeTwo}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell Height="80">
                                 <ViewCell.View>
                                     <StackLayout Orientation="Horizontal">
-                                        <controls:CircleImage Source="{Binding Image}" Aspect="Fill" HeightRequest="40" WidthRequest="40"/>
-                                        <Label Text="{Binding Position}"/>
-                                        <Label Text="{Binding Name}"/>
+                                        <!--
+                                        <controls:CircleImage Source="{Binding Image}" Style="{StaticResource ImagePlayer}"/>                                        
+                                        -->
+                                        <Label Text="{Binding Position}" Style="{StaticResource LabelPlayer}" />
+                                        <Label Text="{Binding Name}" Style="{StaticResource LabelPlayer}" />
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>

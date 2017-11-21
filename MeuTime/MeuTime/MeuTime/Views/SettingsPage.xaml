@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TabbedPageWithNavigationPage;assembly=TabbedPageWithNavigationPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MeuTime.Views.SettingsPage">
+
+    <ContentPage Title="Settings">
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Horizontal" Padding="15,15,15,0">
+                <Label Text="Deletar todos os jogadores:" Font="20" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                <Switch IsToggled="{Binding IsOwned, Mode=TwoWay}"/>
+            </StackLayout>
+            <Button VerticalOptions="EndAndExpand" Font="Large" BackgroundColor="#a2ed93"
+                Text="Salvar" TextColor="Black" Command="{Binding ResetCommand}"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Tutorial">
+        
+    </ContentPage>
+</TabbedPage>

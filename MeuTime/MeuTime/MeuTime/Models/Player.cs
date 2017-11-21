@@ -21,6 +21,8 @@ namespace MeuTime.Models
 
         public decimal Defender { get; set; }
 
+        public decimal Speed { get; set; }
+
         public decimal Score { get; set; }
 
         public override string ToString()

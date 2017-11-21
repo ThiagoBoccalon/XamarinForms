@@ -16,7 +16,8 @@ namespace MeuTime.ViewModels
 
         public DelegateCommand NavigateToPlayerPageCommand { get; private set; }
         public DelegateCommand NavigateToScalePageCommand { get; private set; }
-        public DelegateCommand ResetCommand { get; private set; }
+        public DelegateCommand NavigateToSettingsPageCommand { get; private set; }
+        
 
         public MainPageViewModel(INavigationService navigationService) 
             : base (navigationService)
@@ -25,7 +26,7 @@ namespace MeuTime.ViewModels
             _navigationService = navigationService;
             NavigateToPlayerPageCommand = new DelegateCommand(ExecuteNavigateToPlayerPage);
             NavigateToScalePageCommand = new DelegateCommand(ExecuteNavigateToScalePage);
-            ResetCommand = new DelegateCommand(ExecuteResetCommand);
+            NavigateToSettingsPageCommand = new DelegateCommand(ExecuteNavigateToSettingsPage);            
         }
 
         private void ExecuteNavigateToPlayerPage()
@@ -38,14 +39,9 @@ namespace MeuTime.ViewModels
             _navigationService.NavigateAsync("ScalePage");
         }
 
-      
-        private void ExecuteResetCommand()
+        private void ExecuteNavigateToSettingsPage()
         {
-            using(var data = new AcessDataBase())
-            {
-                data.DropTable();
-            }
+            _navigationService.NavigateAsync("SettingsPage");
         }
-
     }
 }

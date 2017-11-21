@@ -19,6 +19,7 @@ namespace MeuTime.ViewModels
 
         private string _position;
         private string _nameplayer;
+        private bool _setPosition = false;
 
         public string NamePlayer
         {
@@ -26,7 +27,7 @@ namespace MeuTime.ViewModels
             set { _nameplayer = value; }
         }
 
-        private decimal _sliderAttack, _sliderDefender;
+        private decimal _sliderAttack, _sliderDefender, _sliderSpeed;
 
         public decimal SliderAttack
         {
@@ -38,6 +39,12 @@ namespace MeuTime.ViewModels
         {
             get { return _sliderDefender; }
             set { if (_sliderDefender != value) _sliderDefender = value; RaisePropertyChanged(); }
+        }
+
+        public decimal SliderSpeed
+        {
+            get { return _sliderSpeed; }
+            set { if (_sliderSpeed != value) _sliderSpeed = value; RaisePropertyChanged(); }
         }
 
         public DelegateCommand GoleiroCommand { get; }
@@ -62,13 +69,13 @@ namespace MeuTime.ViewModels
             SavePlayerCommand = new Command(ExecuteSavePlayerCommand);
         }
 
-        private void ExecuteGoleiroCommand() { _position += "GOL"; }
-        private void ExecuteZagueiroCommand() { _position += "ZAG"; }
-        private void ExecuteLateralEsqCommand() { _position += "LE"; }
-        private void ExecuteLateralDirCommand() { _position += "LD"; }
-        private void ExecuteVolanteCommand() { _position += "VOL"; }
-        private void ExecuteMeioCommand() { _position += "MC"; }
-        private void ExecuteAtaqueCommand() { _position += "ATA"; }
+        private void ExecuteGoleiroCommand() { _position += "GOL"; _setPosition = true; gol_number++; }
+        private void ExecuteZagueiroCommand() { _position += "ZAG"; _setPosition = true; zag_number++; }
+        private void ExecuteLateralEsqCommand() { _position += "LE"; _setPosition = true; le_number++; }
+        private void ExecuteLateralDirCommand() { _position += "LD"; _setPosition = true; ld_number++; }
+        private void ExecuteVolanteCommand() { _position += "VOL"; _setPosition = true; vol_number++; }
+        private void ExecuteMeioCommand() { _position += "MC"; _setPosition = true; mc_number++; }
+        private void ExecuteAtaqueCommand() { _position += "ATA"; _setPosition = true; ata_number++; }
 
         async void ExecuteSavePlayerCommand()
         {
@@ -78,6 +85,12 @@ namespace MeuTime.ViewModels
 
         private void NewPlayer()
         {
+            if (!_setPosition)
+            {
+                App.Current.MainPage.DisplayAlert("Meu Time", "Faltou definir a posição do jogador", "OK");
+                return;
+            }
+
             var player = new Player
             {
                 Name = _nameplayer.ToString(),
