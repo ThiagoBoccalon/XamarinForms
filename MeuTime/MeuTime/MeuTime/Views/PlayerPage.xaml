@@ -4,7 +4,7 @@
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="MeuTime.Views.PlayerPage" Title="PlayerPage" BackgroundImage="backgound01.png">
+             x:Class="MeuTime.Views.PlayerPage" Title="Novo Jogador" BackgroundImage="backgound01.png">
     <ContentPage.Content>
         <ScrollView VerticalOptions="Center" HorizontalOptions="Fill">
             <StackLayout>
@@ -73,9 +73,9 @@
                     <Slider Value="{Binding SliderDefender}" Style="{StaticResource MySlider}"/>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <Label Text="Velocidade:" Style="{StaticResource MyLabel}"/>
-                        <Label Style="{StaticResource MyLabel}"/>
+                        <Label Text="{Binding SliderSpeed}" Style="{StaticResource MyLabel}"/>
                     </StackLayout>
-                    <Slider Style="{StaticResource MySlider}"/>
+                    <Slider Value="{Binding SliderSpeed}" Style="{StaticResource MySlider}"/>
                     <circularButton:CircleButton BorderRadius="10" HeightRequest="50" 
                                              Text="Salvar" VerticalOptions="End" 
                                              HorizontalOptions="FillAndExpand" 

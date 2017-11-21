@@ -4,6 +4,8 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
+
 
 
 namespace MeuTime.ViewModels
@@ -11,10 +13,11 @@ namespace MeuTime.ViewModels
 	public class SettingsPageViewModel : BindableBase
     {
         bool _isOwned;
+        string textOne, textTwo, textThree;
+
         private INavigationService _navigationService;
         public DelegateCommand ResetCommand { get; private set; }
-        
-
+                
         public SettingsPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -34,7 +37,7 @@ namespace MeuTime.ViewModels
             }
         } 
 
-
+        
         private void ExecuteResetCommand()
         {
             //bool answer = await App.Current.MainPage.DisplayAlert("Meu Time", "Deseja mesmo excluir todos os jogadores?", "Sim", "Não");

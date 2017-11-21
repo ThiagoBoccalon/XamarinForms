@@ -85,6 +85,7 @@ namespace MeuTime.ViewModels
 
         private void NewPlayer()
         {
+            decimal alpha = 0;
             if (!_setPosition)
             {
                 App.Current.MainPage.DisplayAlert("Meu Time", "Faltou definir a posição do jogador", "OK");
@@ -93,11 +94,13 @@ namespace MeuTime.ViewModels
 
             var player = new Player
             {
+
                 Name = _nameplayer.ToString(),
                 Position = _position.ToString(),
                 Attack = _sliderAttack,
                 Defender = _sliderDefender,
-                Score = _sliderAttack + _sliderDefender
+                Speed = _sliderSpeed,
+                Score = _sliderAttack + _sliderSpeed + _sliderSpeed                
             };
 
             using (var data = new AcessDataBase())
@@ -105,6 +108,5 @@ namespace MeuTime.ViewModels
 
             _position = "";
         }
-
     }
 }

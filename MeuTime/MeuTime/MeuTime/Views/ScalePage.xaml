@@ -4,13 +4,18 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             x:Class="MeuTime.Views.ScalePage">
+             x:Class="MeuTime.Views.ScalePage" Title="Escalação">
     
     <ContentPage.Content>
-        <ScrollView Padding="10,20">
+        <ScrollView Padding="15">
             <StackLayout VerticalOptions="Start">
-                <Label Text="Time 1:" Font="30" HorizontalOptions="CenterAndExpand"/>
-                <ListView ItemsSource="{Binding TimeOne}" SeparatorVisibility="None">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Time 1:" Style="{StaticResource LabelTime}"/>
+                    <Label Text="{Binding ScoreTimeOne}" Style="{StaticResource LabelTime}" TextColor="#c13e51"/>
+                    <Label Text="Pontos" Font="10"/>
+                </StackLayout>
+
+                <ListView ItemsSource="{Binding TimeOne}" Margin="0,0,0,30">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell Height="80">
@@ -19,7 +24,7 @@
                                         <!--
                                         <controls:CircleImage Source="{Binding Image}" Style="{StaticResource ImagePlayer}" />                                        
                                         -->
-                                        <Label Text="{Binding Position}" Style="{StaticResource LabelPlayer}" />
+                                        <Label Text="{Binding Position}" Style="{StaticResource LabelPlayer}" TextColor="#c13e51"/>
                                         <Label Text="{Binding Name}" Style="{StaticResource LabelPlayer}" />
                                     </StackLayout>
                                 </ViewCell.View>
@@ -27,7 +32,12 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Label Text="Time 2:" Font="30" HorizontalOptions="CenterAndExpand" />
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Time 2:" Style="{StaticResource LabelTime}" />
+                    <Label Text="{Binding ScoreTimeTwo}" Style="{StaticResource LabelTime}" TextColor="#c13e51"/>
+                    <Label Text="Pontos" Font="10"/>
+                </StackLayout>
                 <ListView ItemsSource="{Binding TimeTwo}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -37,7 +47,7 @@
                                         <!--
                                         <controls:CircleImage Source="{Binding Image}" Style="{StaticResource ImagePlayer}"/>                                        
                                         -->
-                                        <Label Text="{Binding Position}" Style="{StaticResource LabelPlayer}" />
+                                        <Label Text="{Binding Position}" Style="{StaticResource LabelPlayer}" TextColor="#c13e51"/>
                                         <Label Text="{Binding Name}" Style="{StaticResource LabelPlayer}" />
                                     </StackLayout>
                                 </ViewCell.View>

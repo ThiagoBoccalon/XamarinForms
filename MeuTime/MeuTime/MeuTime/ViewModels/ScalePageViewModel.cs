@@ -11,25 +11,36 @@ namespace MeuTime.ViewModels
 {
 	public class ScalePageViewModel : BindableBase
 	{
+        private decimal _scoreTimeOne, _scoreTimeTwo;
         List<Player> player = new List<Player>();
         public List<Player> TimeOne { get; set; } = new List<Player>();
-        public List<Player> TimeTwo { get; set; } = new List<Player>();
+        public List<Player> TimeTwo { get; set; } = new List<Player>();        
+        Scale scale = new Scale();
         
 
-        Scale scale = new Scale();
-                
+        public string ScoreTimeOne
+        {
+            get { return Scale._scoreTimeOne.ToString(); }
+        }
+
+        public string ScoreTimeTwo
+        {
+            get { return Scale._scoreTimeTwo.ToString(); }
+        }
+
+
         public ScalePageViewModel()
         {            
             TimeOne.Clear(); Scale.time_one.Clear();
             TimeTwo.Clear(); Scale.time_two.Clear();
 
             scale.Goalkeeper();                        
-            scale.OthersPlayers("ZAG","Defender",4);            
-            scale.OthersPlayers("LE", "DefenderAttack", 2);
-            scale.OthersPlayers("LD", "DefenderAttack", 2);
-            scale.OthersPlayers("VOL", "DefenderAttack", 2);
-            scale.OthersPlayers("MC", "Attack", 2);
-            scale.OthersPlayers("ATA", "Attack", 2);
+            scale.OthersPlayers("ZAG",4);            
+            scale.OthersPlayers("LE", 2);
+            scale.OthersPlayers("LD", 2);
+            scale.OthersPlayers("VOL", 2);
+            scale.OthersPlayers("MC", 2);
+            scale.OthersPlayers("ATA", 2);
             
             for (int i = 0; i < Scale.time_one.Count; i++)
             {

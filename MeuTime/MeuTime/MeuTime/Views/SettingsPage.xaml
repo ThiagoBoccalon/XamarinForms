@@ -6,7 +6,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MeuTime.Views.SettingsPage">
 
-    <ContentPage Title="Settings">
+    <ContentPage Title="Configuração">
         <StackLayout Padding="20">
             <StackLayout Orientation="Horizontal" Padding="15,15,15,0">
                 <Label Text="Deletar todos os jogadores:" Font="20" 
@@ -18,6 +18,18 @@
         </StackLayout>
     </ContentPage>
     <ContentPage Title="Tutorial">
-        
+        <StackLayout Padding="10" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Cadastrando os Jogadores" Style="{StaticResource TitleLabel}"/>            
+            <Label Text="Os jogadores devem ser cadastrados com nome, posição onde joga e critérios de avaliação sendo esses: Ataque, Defesa e Valocidade." 
+                       Style="{StaticResource TextLabel}"/>
+            
+            <Label Text="Escalação dos Jogadores" Style="{StaticResource TitleLabel}"/>
+            <Label Text="É preciso que sejam cadastrados no mínimo 14 jogadores. O critério de escalação é realizado por meio da avaliação
+                          feita anteriormente (na etapa de cadastro dos jogadores)."
+                   Style="{StaticResource TextLabel}"/>
+            
+            <Label Text="Configurações" Style="{StaticResource TitleLabel}"/>
+            <Label Text="Para se realizar a escalação de um novo jogo, é necessário remover os jogdores do jogo anterior e realizar um no cadastro." Style="{StaticResource TextLabel}"/>
+        </StackLayout>
     </ContentPage>
 </TabbedPage>

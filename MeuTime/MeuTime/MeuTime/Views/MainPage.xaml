@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MeuTime.Views.MainPage"
              xmlns:circularButton="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
-             Title="{Binding Title}" BackgroundImage="background_main.png">
+             Title="Meu Time" BackgroundImage="background_main.png">
 
     <StackLayout VerticalOptions="End">
         <StackLayout BackgroundColor="#35393a"
