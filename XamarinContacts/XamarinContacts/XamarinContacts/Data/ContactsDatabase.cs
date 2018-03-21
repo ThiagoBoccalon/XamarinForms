@@ -1,11 +1,10 @@
 ﻿using SQLite;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using XamarinContacts.Helpers;
 using XamarinContacts.Model;
+using System.Linq;
 
 namespace XamarinContacts.Data
 {
