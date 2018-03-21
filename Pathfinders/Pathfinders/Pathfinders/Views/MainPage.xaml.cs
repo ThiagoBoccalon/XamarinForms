@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace XamarinContacts.Views
+namespace Pathfinders.Views
 {
 	public partial class MainPage : ContentPage
 	{

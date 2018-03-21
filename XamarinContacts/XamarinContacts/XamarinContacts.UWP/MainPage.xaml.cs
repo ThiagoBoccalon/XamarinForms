@@ -1,6 +1,4 @@
-﻿using Prism;
-using Prism.Ioc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,15 +21,7 @@ namespace XamarinContacts.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new XamarinContacts.App(new UwpInitializer()));
-        }
-    }
-
-    public class UwpInitializer : IPlatformInitializer
-    {
-        public void RegisterTypes(IContainerRegistry container)
-        {
-
+            LoadApplication(new XamarinContacts.App());
         }
     }
 }

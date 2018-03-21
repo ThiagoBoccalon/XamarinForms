@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace XamarinContacts.ViewModels
+namespace Pathfinders.ViewModels
 {
     public class ViewModelBase : BindableBase, INavigationAware, IDestructible
     {

@@ -1,36 +1,61 @@
-﻿using Prism;
-using Prism.Ioc;
-using XamarinContacts.ViewModels;
-using XamarinContacts.Views;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Prism.Unity;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+using Xamarin.Forms;
+using XamarinContacts.Data;
+using XamarinContacts.Services;
+
 namespace XamarinContacts
 {
-    public partial class App : PrismApplication
-    {
-        /* 
-         * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
-         * This imposes a limitation in which the App class must have a default constructor. 
-         * App(IPlatformInitializer initializer = null) cannot be handled by the Activator.
-         */
-        public App() : this(null) { }
+	public partial class App : Application
+	{
+        private static ContactsDatabase database;
 
-        public App(IPlatformInitializer initializer) : base(initializer) { }
-
-        protected override async void OnInitialized()
+        public static ContactsDatabase Database
         {
-            InitializeComponent();
-
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            get
+            {
+                if (database == null)
+                {
+                    try
+                    {
+                        database =
+                            new ContactsDatabase(DependencyService
+                                .Get<IFileHelper>()
+                                .GetLocalFilePath("contactsdb.db3"));
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Message);
+                    }
+                }
+                return database;
+            }
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage>();
-        }
-    }
+        public App ()
+		{
+			InitializeComponent();
+
+			MainPage = new XamarinContacts.MainPage();
+		}
+
+		protected override void OnStart ()
+		{
+			// Handle when your app starts
+		}
+
+		protected override void OnSleep ()
+		{
+			// Handle when your app sleeps
+		}
+
+		protected override void OnResume ()
+		{
+			// Handle when your app resumes
+		}
+	}
 }

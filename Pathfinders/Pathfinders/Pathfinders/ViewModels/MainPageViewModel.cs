@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XamarinContacts.ViewModels
+namespace Pathfinders.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
