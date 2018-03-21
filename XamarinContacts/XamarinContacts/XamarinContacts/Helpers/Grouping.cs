@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 namespace XamarinContacts.Helpers
 {
-    public class Grouping<K, T> : ObservableCollection
+    public class Grouping<K, T> : ObservableCollection<T>
     {
         public K Key { get; set; }
 

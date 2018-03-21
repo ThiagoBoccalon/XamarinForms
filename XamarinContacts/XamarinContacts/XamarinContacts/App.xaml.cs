@@ -7,6 +7,7 @@ using System.Text;
 using Xamarin.Forms;
 using XamarinContacts.Data;
 using XamarinContacts.Services;
+using XamarinContacts.View;
 
 namespace XamarinContacts
 {
@@ -40,7 +41,7 @@ namespace XamarinContacts
 		{
 			InitializeComponent();
 
-			MainPage = new XamarinContacts.MainPage();
+            MainPage = new NavigationPage(new ContactsPage());
 		}
 
 		protected override void OnStart ()

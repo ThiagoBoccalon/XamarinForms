@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinContacts.View.ContactDetailPage">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name: " 
+                       WidthRequest="100"/>
+                <Entry Placeholder="Thiago Bucalon"
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding CurrentContact.Name}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Phone: " 
+                       WidthRequest="100"/>
+                <Entry Placeholder="(XX) XXXX-XXXX"
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding CurrentContact.Phone}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Address: " 
+                       WidthRequest="100"/>
+                <Entry Placeholder="St. Stamford, 2018"
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding CurrentContact.Address}"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Notes:"
+                       WidthRequest="100"/>
+                <Editor
+                    HeightRequest="200"
+                    HorizontalOptions="FillAndExpand"
+                    Text="{Binding CurrentContact.Notes}"/>
+                <Button
+                    Text="Save"
+                    HeightRequest="150"
+                    Command="{Binding SaveContactCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
